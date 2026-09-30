@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07080d">
-  <meta name="description" content="Kingez — Minecraft systems developer, Node.js builder, Discord automation developer, and AI tooling creator.">
+  <meta name="description" content="Kingez — Minecraft server developer focused on complete Paper/Purpur setups, custom plugins, Node.js systems, Discord automation, and AI tooling.">
   <meta property="og:title" content="Kingez — Developer Portfolio">
-  <meta property="og:description" content="Minecraft server systems, custom plugins, Discord automation, Node.js, Java, Python, and AI tooling.">
+  <meta property="og:description" content="Minecraft server setups, custom Paper plugins, Node.js and Discord systems, Java, Python AI tooling, and real server engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kayden-pixel.github.io/">
   <title>Kingez — Minecraft Developer & Systems Builder</title>
@@ -463,6 +463,86 @@
     .project p { max-width: 630px; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 
+    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 0 13px;
+      border-radius: 11px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,.045);
+      color: #eef1f7;
+      font-size: 12px;
+      font-weight: 750;
+      transition: .2s ease;
+    }
+    .project-link:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.28); }
+    .project-link.primary-link {
+      background: linear-gradient(135deg, rgba(255,59,77,.18), rgba(79,124,255,.18));
+      border-color: rgba(118,161,255,.28);
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(11,13,20,.72);
+    }
+    .about-copy { padding: 34px; }
+    .about-copy p { color: var(--muted); line-height: 1.82; font-size: 15px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .about-side {
+      padding: 34px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255,59,77,.11), transparent 34%),
+        radial-gradient(circle at 15% 90%, rgba(79,124,255,.12), transparent 36%);
+    }
+    .fact { padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border-bottom: 0; }
+    .fact small { display: block; color: #687083; font: 700 10px/1 ui-monospace, monospace; letter-spacing: .08em; margin-bottom: 7px; }
+    .fact strong { font-size: 14px; line-height: 1.5; }
+
+    .detail-list {
+      display: grid;
+      gap: 8px;
+      margin: 20px 0 0;
+    }
+    .detail-list div {
+      color: #aeb5c3;
+      font-size: 13px;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+    .detail-list div::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--red-2);
+    }
+
+    .proof-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: #8f97a8;
+      font-size: 11px;
+      font-weight: 650;
+    }
+    .proof-note::before {
+      content: "●";
+      color: var(--green);
+      font-size: 9px;
+      text-shadow: 0 0 12px rgba(85,230,165,.6);
+    }
+
     .project-visual {
       position: relative;
       min-height: 350px;
@@ -575,12 +655,14 @@
       .hero { padding-top: 48px; }
       .hero-grid,
       .stack-grid,
-      .project { grid-template-columns: 1fr; }
+      .project,
+      .about-panel { grid-template-columns: 1fr; }
       .hero-grid { gap: 44px; }
       .terminal { transform: none; max-width: 650px; }
       .grid-3 { grid-template-columns: 1fr; }
       .workflow { grid-template-columns: repeat(2,1fr); }
       .project-visual { border-left: 0; border-top: 1px solid var(--line); min-height: 300px; }
+      .about-side { border-left: 0; border-top: 1px solid var(--line); }
       .section-head { align-items: start; flex-direction: column; gap: 18px; }
     }
 
@@ -612,7 +694,7 @@
       <a class="brand" href="#top" aria-label="Kingez home">
         <span class="brand-mark">K</span>
         <span>Kingez</span>
-        <span>/ systems developer</span>
+        <span>/ Minecraft + backend developer</span>
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -620,7 +702,7 @@
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="nav-cta" href="https://discord.gg/sgjE3eV5n" target="_blank" rel="noreferrer">Discord ↗</a>
+      <a class="nav-cta" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Discord ↗</a>
     </div>
   </nav>
 
@@ -629,10 +711,10 @@
       <div class="wrap hero-grid">
         <div class="reveal">
           <div class="eyebrow"><span class="dot"></span> Open to Minecraft development work</div>
-          <h1>I build <span class="gradient-text">server systems</span> that feel finished.</h1>
+          <h1>I build <span class="gradient-text">Minecraft servers</span> people can actually use.</h1>
           <p class="hero-copy">
-            I'm <strong>Kingez</strong> — a developer focused on complete Minecraft server setups, custom Paper/Spigot systems, Discord automation, and AI tooling.
-            <strong>Node.js is my main language</strong>; I use Java for Minecraft development and Python for AI, automation, and model-driven tools.
+            I'm <strong>Kingez</strong>. Most of my work is around Minecraft servers, plugins, Discord systems and the tooling behind them.
+            <strong>Node.js is the language I use the most</strong>. I use Java for Paper/Purpur plugin work, and Python mainly when I'm building AI, automation or model-driven tools. I like taking a server from "blank host" to something that is configured, connected, tested and ready for players.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#work">View selected work <span>↓</span></a>
@@ -676,14 +758,41 @@
       </div>
     </header>
 
+    <section class="compact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">About me</div>
+            <h2>I care more about the finished server than the tech buzzwords.</h2>
+          </div>
+          <p>I build things because I run and manage real communities myself. That means I end up dealing with the boring-but-important parts too: permissions, broken plugin interactions, upgrades, world rules, build errors, staff tooling and player-facing polish.</p>
+        </div>
+
+        <div class="about-panel reveal">
+          <div class="about-copy">
+            <p>My strongest day-to-day language is <strong>Node.js</strong>. That's what I reach for when I'm building Discord bots, APIs, real-time systems, automation or backend tooling. For Minecraft, I work in <strong>Java with Paper/Purpur</strong>. Python is mostly part of my AI stack: model integrations, voice tooling, automation and assistant systems.</p>
+            <p>On Minecraft work, I don't only look at one plugin at a time. I work across the whole setup: worlds, Multiverse, WorldGuard, LuckPerms, PlaceholderAPI, Vault, DiscordSRV, Geyser/Floodgate, scoreboards, MOTDs, moderation, protection, anti-cheat, economy, custom plugins and whatever glue is needed between them.</p>
+            <p>I'm especially comfortable fixing existing systems that are almost working but have weird version, permission, configuration or runtime problems. I use CFR when I need to inspect Java plugin behavior, compile against modern Paper APIs, and validate the final JAR instead of assuming a build is good because it compiled once.</p>
+          </div>
+          <div class="about-side">
+            <div class="fact"><small>MAIN LANGUAGE</small><strong>Node.js / JavaScript</strong></div>
+            <div class="fact"><small>MINECRAFT</small><strong>Java · Paper · Purpur · Spigot ecosystem</strong></div>
+            <div class="fact"><small>AI / AUTOMATION</small><strong>Python · local models · APIs · voice/tool calling</strong></div>
+            <div class="fact"><small>SERVER WORK</small><strong>From blank host → configured, tested server</strong></div>
+            <div class="fact"><small>PUBLIC WORK</small><strong>OmniPanel + Kingez341YT PvP Pack on Modrinth</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="compact">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">What I build</div>
-            <h2>Full setups, not half-finished configs.</h2>
+            <div class="kicker">What I actually do</div>
+            <h2>I can take a Minecraft server from empty to launch-ready.</h2>
           </div>
-          <p>I can take a Minecraft server from a blank instance to a structured, playable setup with the systems, worlds, permissions, plugins, integrations, and polish needed around it.</p>
+          <p>That includes the server structure, lobby/world setup, permissions, plugin stack, custom code, Discord side, testing and the small details players notice when something is wrong.</p>
         </div>
 
         <div class="grid-3">
@@ -785,11 +894,22 @@
             <div>
               <div class="project-num">PROJECT 01 · MINECRAFT</div>
               <h3>OmniPanel</h3>
-              <p>A Minecraft server control and administration system covering moderation, player utilities, homes/teams, Discord integration, developer APIs, GUI-driven controls, and stability-focused server tooling.</p>
+              <p>My biggest public Minecraft plugin. OmniPanel is an all-in-one server administration platform for modern Paper/Purpur servers. It combines staff tools, player management, Punishment X, Command Hub V5, regions, ranks, kits, homes, AutoMod, authentication, alerts, diagnostics, Multiverse world controls, Velocity networking and DiscordSRV integration around one main <code>/panel</code> workflow.</p>
+              <div class="detail-list">
+                <div>Hybrid inventory GUIs + native Minecraft dialogs for forms, confirmations and settings</div>
+                <div>Paper/Purpur 26.2–26.3 support with Java 21-compatible plugin bytecode</div>
+                <div>Public API for other plugins to open menus, create alerts, access punishments, homes, regions and events</div>
+                <div>Integrations include LuckPerms, PlaceholderAPI, Vault, WorldGuard, Geyser/Floodgate, TAB and DecentHolograms</div>
+              </div>
             </div>
             <div class="project-tags">
-              <span class="chip">Paper</span><span class="chip">Java</span><span class="chip">DiscordSRV</span><span class="chip">Admin tooling</span><span class="chip">Developer API</span>
+              <span class="chip">Paper / Purpur</span><span class="chip">Java</span><span class="chip">DiscordSRV</span><span class="chip">Multiverse</span><span class="chip">Velocity</span><span class="chip">Developer API</span>
             </div>
+            <div class="project-actions">
+              <a class="project-link primary-link" href="https://modrinth.com/plugin/omnipanel" target="_blank" rel="noreferrer">View OmniPanel on Modrinth ↗</a>
+              <a class="project-link" href="https://modrinth.com/plugin/omnipanel/versions" target="_blank" rel="noreferrer">Versions / changelog ↗</a>
+            </div>
+            <div class="proof-note">Public project — real downloadable release</div>
           </div>
           <div class="project-visual">
             <div class="system-window">
@@ -811,7 +931,7 @@
             <div>
               <div class="project-num">PROJECT 02 · SECURITY</div>
               <h3>ModAI</h3>
-              <p>A panel-first Discord moderation and security platform with anti-nuke, anti-raid, leak protection, AutoMod integration, incident handling, logging, recovery workflows, evidence-backed cases, health scans, and operational diagnostics.</p>
+              <p>A Discord security/moderation system I have rebuilt and upgraded through many versions. The core idea is panel-first: keep the public command list small, put the real controls in the panel, and keep security systems such as anti-nuke, anti-raid, anti-leak, AutoMod, role/staff protection, incidents, recovery and diagnostics connected instead of split across random commands.</p>
             </div>
             <div class="project-tags">
               <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Discord</span><span class="chip">Security</span><span class="chip">Components V2</span>
@@ -837,7 +957,7 @@
             <div>
               <div class="project-num">PROJECT 03 · MINECRAFT</div>
               <h3>SkySpawn Protection</h3>
-              <p>A standalone spawn and region protection system with configurable per-region rules, combat handling, PvP controls, movement restrictions, live repair logic, snapshots, health diagnostics, and administrative audit tooling.</p>
+              <p>A custom Paper spawn/region protection plugin built for practical server use. It handles region entry/exit behavior, PvP and combat-exit rules, pearls, elytra, block break/place, explosions, fire, fluids, pistons and mob-griefing, with profiles, snapshots, health checks, audit logs and live repair logic.</p>
             </div>
             <div class="project-tags">
               <span class="chip">Paper</span><span class="chip">Java</span><span class="chip">Protection</span><span class="chip">Regions</span><span class="chip">Diagnostics</span>
@@ -861,9 +981,41 @@
         <article class="card project reveal">
           <div class="project-copy">
             <div>
-              <div class="project-num">PROJECT 04 · AI / AUTOMATION</div>
+              <div class="project-num">PROJECT 04 · LIVE SERVER SETUP</div>
+              <h3>Skystrike Survival</h3>
+              <p>A survival/SMP server setup I actively work on myself, which is useful because I have to deal with the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
+              <div class="detail-list">
+                <div>Paper-based setup with a dedicated lobby and survival gameplay flow</div>
+                <div>Multiverse + WorldGuard configuration with per-world rules and spawn protection</div>
+                <div>LuckPerms/permissions work, scoreboard/MOTD polish and plugin compatibility testing</div>
+                <div>Real release/launch testing instead of only developing against a blank test server</div>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="chip">Paper</span><span class="chip">Multiverse</span><span class="chip">WorldGuard</span><span class="chip">LuckPerms</span><span class="chip">Server setup</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="system-window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <div class="metric-row">
+                  <div class="metric"><b>SMP</b><small>LIVE SETUP</small></div>
+                  <div class="metric"><b>LP</b><small>PERMISSIONS</small></div>
+                  <div class="metric"><b>WG</b><small>PROTECTION</small></div>
+                </div>
+                <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 05 · AI / AUTOMATION</div>
               <h3>KingPro / Jarvis</h3>
-              <p>A local assistant ecosystem combining voice I/O, wake-word flows, AI model routing, tool calling, connected-app automation, multi-device control ideas, vision, Telegram remote interaction, security controls, and self-repair tooling.</p>
+              <p>My long-running local AI assistant project. It mixes wake-word voice control, speech-to-text/text-to-speech, model routing, tool calling, Telegram remote control, multi-monitor vision, connected-app controls, local-device integration and recovery/security logic. Python handles a lot of the AI layer while Node.js is used where it makes more sense for services and integrations.</p>
             </div>
             <div class="project-tags">
               <span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">AI</span><span class="chip">Voice</span><span class="chip">Automation</span>
@@ -883,6 +1035,42 @@
             </div>
           </div>
         </article>
+
+        <article class="card project reveal">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 06 · PUBLIC MINECRAFT RELEASE</div>
+              <h3>Kingez341YT PvP Pack</h3>
+              <p>A public PvP resource pack I maintain on Modrinth. It focuses on practical combat visibility rather than replacing the whole Minecraft style: short swords, lower fire, smaller totems, outlined ores, cleaner particles, HUD/GUI work, item tweaks and combat-focused animations.</p>
+              <div class="detail-list">
+                <div>Published for modern Minecraft versions including 1.20.x, 1.21.x and newer releases</div>
+                <div>Designed around clearer PvP visibility and less screen clutter</div>
+                <div>Another example of me actually publishing and maintaining Minecraft work publicly</div>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="chip">Resource Pack</span><span class="chip">PvP</span><span class="chip">Minecraft</span><span class="chip">Modrinth</span>
+            </div>
+            <div class="project-actions">
+              <a class="project-link primary-link" href="https://modrinth.com/resourcepack/kingez341yt" target="_blank" rel="noreferrer">View pack on Modrinth ↗</a>
+              <a class="project-link" href="https://modrinth.com/resourcepack/kingez341yt/versions" target="_blank" rel="noreferrer">Versions ↗</a>
+            </div>
+            <div class="proof-note">Public project — real downloadable release</div>
+          </div>
+          <div class="project-visual red">
+            <div class="system-window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <div class="metric-row">
+                  <div class="metric"><b>PvP</b><small>COMBAT FOCUS</small></div>
+                  <div class="metric"><b>1.20+</b><small>MULTI VERSION</small></div>
+                  <div class="metric"><b>MR</b><small>PUBLIC RELEASE</small></div>
+                </div>
+                <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -891,15 +1079,15 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">Minecraft delivery</div>
-            <h2>What I can do for a full server setup.</h2>
+            <h2>What I can handle on a client Minecraft setup.</h2>
           </div>
-          <p>For a client who needs preset lobbies, worlds, plugins, permissions, and a server that is ready to hand to players, this is the part of my work that matters most.</p>
+          <p>If you want to sell or deliver prebuilt Minecraft server setups, this is the work I can take ownership of: the playable world structure, configuration, custom code, integrations and the testing before it is handed over.</p>
         </div>
         <div class="grid-2">
-          <article class="card reveal"><h3>World & lobby architecture</h3><p>Create/import worlds, lobby flows, spawn positioning, adventure rules, time/weather controls, PvP/hunger behavior, portal rules, respawn behavior, Multiverse setup, and region-based restrictions.</p></article>
-          <article class="card reveal"><h3>Plugin stack configuration</h3><p>Install and configure the supporting ecosystem so systems actually work together: permissions, placeholders, protection, scoreboards, MOTDs, economy, homes, moderation, utilities, and custom additions.</p></article>
-          <article class="card reveal"><h3>Custom development</h3><p>When an off-the-shelf plugin cannot produce the exact behavior, I can build or extend Java/Paper systems and connect them to the rest of the server.</p></article>
-          <article class="card reveal"><h3>Validation & fixing</h3><p>Test commands, permissions, world behavior, compatibility, build/runtime errors, configuration conflicts, edge cases, and player-facing flows before calling the setup finished.</p></article>
+          <article class="card reveal"><h3>World & lobby architecture</h3><p>Create/import worlds, flat or custom lobbies, spawn positioning, gamemode/difficulty, time and weather rules, PvP/hunger behavior, portal settings, respawn behavior, Multiverse registration and WorldGuard protection.</p></article>
+          <article class="card reveal"><h3>Plugin stack configuration</h3><p>Set up LuckPerms, PlaceholderAPI, Vault, WorldGuard/WorldEdit, Multiverse, DiscordSRV, Geyser/Floodgate, TAB/scoreboards, MOTDs, economy, homes, moderation, anti-cheat, powers and other gameplay plugins so they work together.</p></article>
+          <article class="card reveal"><h3>Custom plugin work</h3><p>When an existing plugin cannot do the exact job, I can build Java/Paper features, extend an existing internal system, add GUIs, commands, listeners, persistence, integrations, diagnostics and admin controls.</p></article>
+          <article class="card reveal"><h3>Debugging & handoff</h3><p>Test commands, permissions, world behavior, plugin compatibility, startup/runtime errors, Java version problems, config conflicts and player flows, then leave the setup organised enough that somebody else can maintain it.</p></article>
         </div>
       </div>
     </section>
@@ -926,12 +1114,12 @@
         <div class="contact reveal">
           <div class="kicker">Let's build</div>
           <h2>Need a Minecraft setup that is more than a pile of plugins?</h2>
-          <p>I'm interested in Minecraft server setups, custom server systems, plugin work, Discord integrations, and automation projects. Send me what you're building, your target version, and the systems you need.</p>
+          <p>If you're building a Minecraft setup, tell me the target version, server software, game mode, plugin list and what the final package needs to include. I can work on full server setups, custom Paper/Purpur systems, fixing existing setups, Discord integration and the backend tooling around them.</p>
           <div class="social-row">
-            <a class="button primary" href="https://discord.gg/sgjE3eV5n" target="_blank" rel="noreferrer">Join my Discord ↗</a>
+            <a class="button primary" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Join my Discord ↗</a>
             <a class="button secondary" href="https://github.com/kayden-pixel" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a class="button secondary" href="https://youtube.com/@kingez341yt?si=wmtDHvtTtgjo2e1y" target="_blank" rel="noreferrer">YouTube ↗</a>
-            <a class="button secondary" href="https://modrinth.com/resourcepack/kingez341yt" target="_blank" rel="noreferrer">Modrinth ↗</a>
+            <a class="button secondary" href="https://youtube.com/@kingez341yt?si=47zEeyk2eVJ2pPH2" target="_blank" rel="noreferrer">YouTube ↗</a>
+            <a class="button secondary" href="https://modrinth.com/plugin/omnipanel" target="_blank" rel="noreferrer">OmniPanel ↗</a><a class="button secondary" href="https://modrinth.com/resourcepack/kingez341yt" target="_blank" rel="noreferrer">PvP Pack ↗</a>
           </div>
         </div>
       </div>
@@ -943,8 +1131,8 @@
       <div>© <span id="year"></span> Kingez · Built for the web, hosted on GitHub Pages.</div>
       <div class="footer-links">
         <a href="https://github.com/kayden-pixel" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://youtube.com/@kingez341yt?si=wmtDHvtTtgjo2e1y" target="_blank" rel="noreferrer">YouTube</a>
-        <a href="https://discord.gg/sgjE3eV5n" target="_blank" rel="noreferrer">Discord</a>
+        <a href="https://youtube.com/@kingez341yt?si=47zEeyk2eVJ2pPH2" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Discord</a>
       </div>
     </div>
   </footer>

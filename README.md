@@ -18,8 +18,13 @@ https://kayden-pixel.github.io/
 ## Public links
 
 - GitHub: https://github.com/kayden-pixel
-- YouTube: https://youtube.com/@kingez341yt
-- Discord: https://discord.gg/sgjE3eV5n
+- YouTube: https://youtube.com/@kingez341yt?si=47zEeyk2eVJ2pPH2
+- Discord: https://discord.gg/SdCvw52vzS
 - Modrinth: https://modrinth.com/resourcepack/kingez341yt
 
 The site is intentionally static and self-contained so it can be edited directly without a framework or build step.
+
+## Public Minecraft work
+
+- OmniPanel: https://modrinth.com/plugin/omnipanel
+- Kingez341YT PvP Pack: https://modrinth.com/resourcepack/kingez341yt

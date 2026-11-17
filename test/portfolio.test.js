@@ -64,44 +64,49 @@ const studioCss = fs.readFileSync(path.join(root, 'assets/studio-v3.css'), 'utf8
 const studioJs = fs.readFileSync(path.join(root, 'assets/studio-v3.js'), 'utf8');
 const logo = fs.readFileSync(path.join(root, 'assets/kingez-mark.svg'), 'utf8');
 
-test('logo and enhanced design assets are integrated', () => {
-  assert.match(logo, /^<svg[\\s>]/);
-  assert.match(logo, /viewBox="0 0 128 128"/);
-  assert.match(logo, /<title id="t">Kingez/);
-  assert.match(html, /rel="icon" href="assets\\/kingez-mark\\.svg"/);
-  assert.match(html, /href="assets\\/studio-v3\\.css"/);
-  assert.match(html, /src="assets\\/studio-v3\\.js"/);
-  assert.match(html, /class="brand-mark"><img src="assets\\/kingez-mark\\.svg"/);
-  assert.match(studioCss, /prefers-reduced-motion/);
-  assert.match(studioCss, /max-width: 620px/);
+test('original vector logo and premium theme are integrated', () => {
+  assert.ok(logo.trimStart().startsWith('<svg '));
+  assert.ok(logo.includes('viewBox="0 0 128 128"'));
+  assert.ok(logo.includes('<title id="t">Kingez'));
+  for (const item of ['rel="icon" href="assets/kingez-mark.svg"',
+                     'href="assets/studio-v3.css"',
+                     'src="assets/studio-v3.js"',
+                     '<img src="assets/kingez-mark.svg"']) {
+    assert.ok(html.includes(item), item + ' missing');
+  }
+  assert.ok(studioCss.includes('prefers-reduced-motion'));
+  assert.ok(studioCss.includes('max-width: 620px'));
 });
 
-test('interactive systems have matching tab keys and a visible default', () => {
+test('interactive six-system lab has matching tabs and usable fallback', () => {
   const keys = [...html.matchAll(/class="lab-tab"[^>]*data-system="([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual(keys, ['kingpro', 'modai', 'kydora', 'exam', 'sense', 'omnipanel']);
-  for (const key of keys) assert.match(studioJs, new RegExp('\\\\b' + key + ': \\\\{'));
-  for (const id of ['systems','lab-content','lab-title','lab-description','lab-highlights','lab-tech','lab-caption','lab-note','project-search','project-empty']) {
-    assert.match(html, new RegExp('id="' + id + '"'));
+  for (const key of keys) assert.ok(studioJs.includes(key + ': {'), key + ' missing');
+  for (const id of ['systems','lab-content','lab-title','lab-description',
+    'lab-highlights','lab-tech','lab-caption','lab-note','project-search','project-empty']) {
+    assert.ok(html.includes('id="' + id + '"'), id + ' missing');
   }
-  assert.equal([...html.matchAll(/data-lab-node/g)].length,4);
-  assert.match(html, /aria-pressed="true">KingPro/);
-  assert.match(studioJs, /textContent = entry\\.title/);
+  assert.equal([...html.matchAll(/data-lab-node/g)].length, 4);
+  assert.ok(html.includes('aria-pressed="true">KingPro'));
+  assert.ok(studioJs.includes('title.textContent = entry.title'));
 });
 
-test('public product links and status labels are grounded', () => {
-  for (const url of [
-    'https://github.com/kayden-pixel/SENSE',
-    'https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest',
-    'https://modrinth.com/plugin/omnipanel'
-  ]) assert.ok(html.includes(url), url + ' missing');
-  assert.match(html, /Retired server/);
-  assert.match(html, /Private development/);
-  assert.match(html, /Early beta|early beta/);
+test('project links and accurate maturity labels are present', () => {
+  for (const url of ['https://github.com/kayden-pixel/SENSE',
+                     'https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest',
+                     'https://modrinth.com/plugin/omnipanel']) {
+    assert.ok(html.includes(url), url + ' missing');
+  }
+  assert.ok(html.includes('Retired server'));
+  assert.ok(html.includes('Private development'));
+  assert.ok(html.toLowerCase().includes('early beta'));
 });
 
-test('new JavaScript remains static-safe and accessible', () => {
-  assert.match(studioJs, /navigator\\.clipboard\\.writeText/);
-  assert.match(studioJs, /ArrowRight/);
-  assert.match(studioJs, /refreshProjects\\(\\)/);
-  assert.doesNotMatch(studioJs, /innerHTML|eval\\(|process\\.env|Authorization\\s*:/);
+test('portfolio search and copy controls remain local-only', () => {
+  assert.ok(studioJs.includes('navigator.clipboard.writeText'));
+  assert.ok(studioJs.includes('ArrowRight'));
+  assert.ok(studioJs.includes('refreshProjects()'));
+  for (const forbidden of ['innerHTML', 'eval(', 'process.env', 'Authorization:']) {
+    assert.ok(!studioJs.includes(forbidden), forbidden + ' should not exist');
+  }
 });

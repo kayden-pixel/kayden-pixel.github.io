@@ -41,6 +41,31 @@
       "linkLabel": "Kingez on GitHub"
     },
     {
+      "id": "projects",
+      "title": "Projects & systems",
+      "aliases": [
+        "what are your projects",
+        "show your projects",
+        "list projects",
+        "what have you built",
+        "what has kingez built",
+        "your projects",
+        "what do you build",
+        "what have you made"
+      ],
+      "keywords": [
+        "projects",
+        "portfolio",
+        "built",
+        "systems",
+        "work",
+        "showcase"
+      ],
+      "answer": "The portfolio showcases 12 projects across Minecraft, Discord, desktop AI, Android and backend software. Highlights include KingPro/Jarvis, ModAI, OmniPanel, Kydora Home, SENSE, the SA Exam Research Engine, HoloDesk and Orbital Strike. Some are public releases and others are clearly labelled private or experimental.",
+      "link": "website",
+      "linkLabel": "Browse all 12 projects"
+    },
+    {
       "id": "skills",
       "title": "Languages & tools",
       "aliases": [

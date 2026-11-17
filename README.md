@@ -4,6 +4,35 @@
 
 A fast, zero-build portfolio covering Minecraft plugins, Discord automation, local AI assistants, Android software, connected-device tools, document research and Node.js backends.
 
+## V5 — welcome sequence, birthday and deployment-ready public API
+
+- First-visit **Kingez Systems boot animation** with original command-centre rings, CSS progress meter, visible Skip/Enter controls and auto-completion after 3.4 seconds. It never blocks the static site if JavaScript is off. For visitors who request reduced motion, it does not auto-run.
+- Small local-only `localStorage` flag prevents repeat animations on return visits; access errors fail open to the normal website. **Replay intro** is available in the footer, and the overlay supports Escape, keyboard focus trapping and a manual exit.
+- Owner-requested **birthday: 16 June 2001**, displayed in About using a semantic `<time>` element, also added to the approved public portfolio Q&A knowledge for the site and read-only Jarvis plugin.
+- A real, **optional** Vercel Node 22 serverless API in `backend-vercel/` using the same reviewed FAQ knowledge. It includes `POST /api/ask` and `GET /api/health`, input limits, exact allowed-origin CORS, per-instance best-effort throttling and no model credentials or private Jarvis access.
+- The Vercel API is **not automatically active just because the GitHub Pages site is deployed**. Its own project must be created in a workspace with deploy permission, tested, and its verified URL configured in the site's `kingez-public-chat-api` meta field. Until then, the original static FAQ widget keeps working.
+
+### Backend hosting status and security
+
+On 17 November 2026 the configured Vercel Hobby workspace was discoverable but **rejected project creation (HTTP 403)**. No Vercel production endpoint was created, and the portfolio's API meta setting remains empty. This is a permissions/hosting blocker, **not** a failed public chat: the local curated FAQ functions without an API.
+
+The Vercel handler's in-memory limiter is *per warm function instance*, not a strict distributed/global guarantee; enforce edge-platform rate limits before considering AI model credits, chat persistence, user accounts, payments or other sensitive workloads. It must never proxy unrestricted requests to the private KingPro desktop application.
+
+#### Deploy when hosting access is authorized
+
+1. Create a separate Vercel project named `kingez-public-knowledge-api` linked to `kayden-pixel/kayden-pixel.github.io`, root directory **`backend-vercel`**, Node 22, with `main` as the production branch.
+2. Verify both `GET https://YOUR-DEPLOYMENT/api/health` and an allowed-origin `POST /api/ask` response. Verify rejected off-origin requests and public FAQ response restrictions.
+3. Configure the site `index.html` `<meta name="kingez-public-chat-api" content="https://YOUR-DEPLOYMENT/api/ask">` only after the production URL is confirmed and HTTPS-enabled. Current browser chat has a local fallback if the optional endpoint becomes unavailable.
+4. Leave the GitHub Pages site and the private Jarvis application **separate**. Jarvis reads the public knowledge JSON only on owner invocation.
+
+Do not publish a new Jarvis installer or label its desktop release as tested without compiling and validating that Windows build. The already-merged `portfolio_public_lookup` plugin is source-level integrated, but it needs a local plugin reload or restart on the owner's PC to become available.
+
+### V5 automated checks
+
+```sh
+node --test test/portfolio.test.js test/public-knowledge.test.mjs test/welcome-backend.test.mjs
+```
+
 ## V4 — developer command centre and public chat
 
 - Midnight black, deep crimson and baby-blue colour language inspired by a high-tech workshop HUD, with a **CSS arc-reactor motif**, responsive navigation, keyboard support and reduced-motion alternatives.

@@ -1,0 +1,546 @@
+{
+  "schema": 1,
+  "updated": "2026-11-17",
+  "owner": "Kingez",
+  "description": "Public, intentionally curated facts about Kingez and the developer portfolio. No private Jarvis memory, credentials, telemetry, personal contacts, or user prompts.",
+  "links": {
+    "website": "https://kayden-pixel.github.io/",
+    "github": "https://github.com/kayden-pixel",
+    "discord": "https://discord.gg/SdCvw52vzS",
+    "youtube": "https://youtube.com/@kingez341yt",
+    "omnipanel": "https://modrinth.com/plugin/omnipanel",
+    "pvp": "https://modrinth.com/resourcepack/kingez341yt",
+    "sense": "https://github.com/kayden-pixel/SENSE",
+    "kydora": "https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest"
+  },
+  "fallback": "I only answer questions about Kingez, his public projects, development work and commissions. Try asking about Jarvis, ModAI, Discord bots, Minecraft plugins or how to contact him.",
+  "topics": [
+    {
+      "id": "identity",
+      "title": "About Kingez",
+      "aliases": [
+        "who is kingez",
+        "who are you",
+        "who is the developer",
+        "who made this site",
+        "tell me about kingez",
+        "about kingez",
+        "who is kayden pixel",
+        "who built the portfolio"
+      ],
+      "keywords": [
+        "kingez",
+        "developer",
+        "about",
+        "creator",
+        "portfolio",
+        "identity"
+      ],
+      "answer": "Kingez (GitHub: kayden-pixel) builds Minecraft server tools, Discord bots, Node.js backend systems, local AI assistants and connected-device projects. This portfolio showcases both released software and private prototypes.",
+      "link": "github",
+      "linkLabel": "Kingez on GitHub"
+    },
+    {
+      "id": "birthday",
+      "title": "Birthday",
+      "aliases": [
+        "when is kingez birthday",
+        "what is kingez birthday",
+        "when was kingez born",
+        "what is your birthday",
+        "what is your birth date",
+        "how old is kingez",
+        "when is his birthday",
+        "birthday date",
+        "kingez date of birth"
+      ],
+      "keywords": [
+        "birthday",
+        "born",
+        "birth",
+        "june",
+        "2001",
+        "date",
+        "age"
+      ],
+      "answer": "Kingez lists his birthday as 16 June 2001 on his public developer portfolio.",
+      "link": "website",
+      "linkLabel": "View the About section"
+    },
+    {
+      "id": "projects",
+      "title": "Projects & systems",
+      "aliases": [
+        "what are your projects",
+        "show your projects",
+        "list projects",
+        "what have you built",
+        "what has kingez built",
+        "your projects",
+        "what do you build",
+        "what have you made"
+      ],
+      "keywords": [
+        "projects",
+        "portfolio",
+        "built",
+        "systems",
+        "work",
+        "showcase"
+      ],
+      "answer": "The portfolio showcases 12 projects across Minecraft, Discord, desktop AI, Android and backend software. Highlights include KingPro/Jarvis, ModAI, OmniPanel, Kydora Home, SENSE, the SA Exam Research Engine, HoloDesk and Orbital Strike. Some are public releases and others are clearly labelled private or experimental.",
+      "link": "website",
+      "linkLabel": "Browse all 12 projects"
+    },
+    {
+      "id": "skills",
+      "title": "Languages & tools",
+      "aliases": [
+        "what languages",
+        "what programming languages",
+        "which languages",
+        "what is his tech stack",
+        "which stack",
+        "coding skills",
+        "programming skills",
+        "what can he code",
+        "does he know python"
+      ],
+      "keywords": [
+        "languages",
+        "javascript",
+        "node",
+        "java",
+        "python",
+        "kotlin",
+        "paper",
+        "react",
+        "socket",
+        "tech",
+        "stack",
+        "skills"
+      ],
+      "answer": "His everyday stack centres on Node.js and JavaScript for bots, APIs and real-time systems; Java for Paper/Spigot plugins; Python for AI and automation; and React/HTML/CSS for interfaces. Some projects also use Kotlin/Jetpack Compose for Android.",
+      "link": "github",
+      "linkLabel": "Browse public repositories"
+    },
+    {
+      "id": "discord-bots",
+      "title": "Custom Discord bots",
+      "aliases": [
+        "can you build a discord bot",
+        "build me a discord bot",
+        "make discord bots",
+        "discord bot commissions",
+        "can kingez make bots",
+        "how much for a discord bot",
+        "order a discord bot"
+      ],
+      "keywords": [
+        "discord",
+        "bot",
+        "bots",
+        "automod",
+        "anti raid",
+        "slash",
+        "roles",
+        "tickets",
+        "commission",
+        "buy",
+        "price"
+      ],
+      "answer": "Kingez takes enquiries for custom Discord bot work such as moderation, security, role panels, tickets, setup flows and API integrations. A one-year Discord Nitro gift may be considered as payment for an agreed, clearly scoped project; discuss the requirements and terms with him before sending anything.",
+      "link": "discord",
+      "linkLabel": "Discuss a bot in Discord"
+    },
+    {
+      "id": "nitro",
+      "title": "One-year Nitro commission option",
+      "aliases": [
+        "one year nitro",
+        "year of nitro",
+        "12 months nitro",
+        "nitro yearly",
+        "nitro commission",
+        "pay with nitro",
+        "nitro as payment",
+        "how much nitro"
+      ],
+      "keywords": [
+        "nitro",
+        "year",
+        "yearly",
+        "annual",
+        "subscription",
+        "gift",
+        "payment"
+      ],
+      "answer": "For suitable custom Discord bot commissions, Kingez is open to discussing a one-year Discord Nitro gift as compensation. The exact features, delivery and support need agreement first. There is no automatic checkout or request to send gifts upfront.",
+      "link": "discord",
+      "linkLabel": "Ask about commissions"
+    },
+    {
+      "id": "modai",
+      "title": "ModAI security bot",
+      "aliases": [
+        "what is modai",
+        "modai bot",
+        "discord security bot",
+        "tell me about modai"
+      ],
+      "keywords": [
+        "modai",
+        "moderation",
+        "antinuke",
+        "antiraid",
+        "security",
+        "incidents",
+        "evidence"
+      ],
+      "answer": "ModAI is Kingez's Discord moderation/security system. It brings anti-raid and anti-nuke safeguards, incident handling, evidence, policy controls and moderation review into a more unified workflow. The core project is private.",
+      "link": "website",
+      "linkLabel": "Explore the portfolio"
+    },
+    {
+      "id": "jarvis",
+      "title": "KingPro / Jarvis",
+      "aliases": [
+        "what is jarvis",
+        "what is kingpro",
+        "kingpro ai",
+        "jarvis ai assistant",
+        "how does jarvis work",
+        "tell me about jarvis"
+      ],
+      "keywords": [
+        "jarvis",
+        "kingpro",
+        "assistant",
+        "voice",
+        "llm",
+        "model",
+        "ai",
+        "ollama",
+        "plugin"
+      ],
+      "answer": "KingPro (Jarvis) is Kingez's private Windows-first AI assistant project. It explores voice/text interaction, model routing, plugin tools and permission-controlled local actions. The public portfolio chat cannot control Jarvis or read private Jarvis memory.",
+      "link": "website",
+      "linkLabel": "See the KingPro project"
+    },
+    {
+      "id": "jarvis-hook",
+      "title": "Jarvis integration boundaries",
+      "aliases": [
+        "is this connected to jarvis",
+        "can chat control jarvis",
+        "can i access his pc",
+        "does chat use jarvis",
+        "does this chatbot use an llm",
+        "powered by jarvis"
+      ],
+      "keywords": [
+        "hook",
+        "connection",
+        "connected",
+        "control",
+        "pc",
+        "private",
+        "jarvis",
+        "chatbot",
+        "brain"
+      ],
+      "answer": "The website and Jarvis can use the same explicitly public portfolio knowledge. Visitors only receive approved public answers. The website does not connect to Kingez's PC, run Jarvis tools, access local memory, or expose private models.",
+      "link": "website",
+      "linkLabel": "Portfolio homepage"
+    },
+    {
+      "id": "omnipanel",
+      "title": "OmniPanel",
+      "aliases": [
+        "what is omnipanel",
+        "minecraft admin plugin",
+        "paper admin tool",
+        "panel plugin"
+      ],
+      "keywords": [
+        "omnipanel",
+        "paper",
+        "purpur",
+        "admin",
+        "panel",
+        "minecraft",
+        "worldguard"
+      ],
+      "answer": "OmniPanel is Kingez's publicly released Minecraft server administration plugin for Paper/Purpur, with staff workflows, permissions, management menus, and integrations. Check the Modrinth page for actual releases and version support.",
+      "link": "omnipanel",
+      "linkLabel": "OmniPanel on Modrinth"
+    },
+    {
+      "id": "pvp-pack",
+      "title": "Kingez PvP Pack",
+      "aliases": [
+        "pvp texture pack",
+        "kingez pvp pack",
+        "minecraft resource pack",
+        "texture pack"
+      ],
+      "keywords": [
+        "pvp",
+        "pack",
+        "texture",
+        "resource",
+        "modrinth"
+      ],
+      "answer": "Kingez341YT PvP Pack is a public Minecraft resource pack focused on cleaner PvP visibility, such as shorter swords and reduced visual clutter. Versions and downloads are on Modrinth.",
+      "link": "pvp",
+      "linkLabel": "Download the PvP Pack"
+    },
+    {
+      "id": "kydora",
+      "title": "Kydora Home",
+      "aliases": [
+        "what is kydora",
+        "kydora home app",
+        "file transfers between devices",
+        "phone pc transfer"
+      ],
+      "keywords": [
+        "kydora",
+        "transfer",
+        "android",
+        "windows",
+        "pairing",
+        "home",
+        "tailscale"
+      ],
+      "answer": "Kydora Home connects trusted Windows PCs and Android phones for approved pairing and encrypted file transfers. Its installers are publicly downloadable, while its application source is private. Tailscale is used for remote connectivity.",
+      "link": "kydora",
+      "linkLabel": "Kydora Home downloads"
+    },
+    {
+      "id": "sense",
+      "title": "SENSE Android beta",
+      "aliases": [
+        "what is sense",
+        "sense android",
+        "sense app",
+        "radar app"
+      ],
+      "keywords": [
+        "sense",
+        "radar",
+        "kotlin",
+        "livekit",
+        "android",
+        "ble",
+        "whisper"
+      ],
+      "answer": "SENSE is an early Android beta exploring local-first sensing, BLE-based proximity ideas, privacy-conscious UI and optional shared audio. The public source and beta status are on GitHub; hardware calibration remains unfinished.",
+      "link": "sense",
+      "linkLabel": "SENSE source"
+    },
+    {
+      "id": "exam",
+      "title": "SA Exam Research Engine",
+      "aliases": [
+        "sa exam engine",
+        "study ai",
+        "exam prediction ai",
+        "school exam research",
+        "exam research"
+      ],
+      "keywords": [
+        "exams",
+        "exam",
+        "school",
+        "study",
+        "curriculum",
+        "south",
+        "african",
+        "research",
+        "prediction"
+      ],
+      "answer": "The SA Exam Research Engine is a private, local-first project that indexes South African exam PDFs with source metadata, SQLite search, rule-based analysis and a local dashboard. It is not yet a trained exam-prediction language model.",
+      "link": "website",
+      "linkLabel": "See the research project"
+    },
+    {
+      "id": "skystrike",
+      "title": "Skystrike Survival",
+      "aliases": [
+        "is skystrike open",
+        "skystrike server",
+        "skystrike survival",
+        "skystrike smp"
+      ],
+      "keywords": [
+        "skystrike",
+        "smp",
+        "survival",
+        "server",
+        "retired"
+      ],
+      "answer": "Skystrike Survival was Kingez's Minecraft SMP/server project. The public server is retired, but the work demonstrates Paper, permissions, WorldGuard and deployment experience.",
+      "link": "website",
+      "linkLabel": "Read the project story"
+    },
+    {
+      "id": "holodesk",
+      "title": "HoloDesk UI project",
+      "aliases": [
+        "what is holodesk",
+        "holographic ui",
+        "hand gesture ui",
+        "webcam hand tracking"
+      ],
+      "keywords": [
+        "holodesk",
+        "gesture",
+        "hands",
+        "webcam",
+        "holographic",
+        "hud"
+      ],
+      "answer": "HoloDesk is an experimental Windows interface project exploring webcam hand tracking, gestures and futuristic spatial-style UI controls. It is a prototype, not a finished public product.",
+      "link": "website",
+      "linkLabel": "HoloDesk details"
+    },
+    {
+      "id": "devlaunch",
+      "title": "DevLaunch Bot",
+      "aliases": [
+        "devlaunch bot",
+        "what is devlaunch",
+        "developer discord assistant"
+      ],
+      "keywords": [
+        "devlaunch",
+        "development",
+        "developer",
+        "discord",
+        "assistant"
+      ],
+      "answer": "DevLaunch Bot is Kingez's private Discord community assistant project combining a guided setup panel, conversational help and GitHub-based developer discovery.",
+      "link": "website",
+      "linkLabel": "See the project"
+    },
+    {
+      "id": "orbital",
+      "title": "Orbital Strike",
+      "aliases": [
+        "orbital strike",
+        "orbital warfare",
+        "minecraft orbital"
+      ],
+      "keywords": [
+        "orbital",
+        "strike",
+        "warfare",
+        "ability",
+        "minecraft"
+      ],
+      "answer": "Orbital Strike is a private Minecraft gameplay plugin exploring unlockable combat abilities, progression, cooldowns and player-facing control menus.",
+      "link": "website",
+      "linkLabel": "Explore Minecraft projects"
+    },
+    {
+      "id": "contact",
+      "title": "How to contact Kingez",
+      "aliases": [
+        "how can i contact",
+        "how do i contact kingez",
+        "where to contact",
+        "discord invite",
+        "hire kingez",
+        "get in touch",
+        "message him"
+      ],
+      "keywords": [
+        "contact",
+        "hire",
+        "work",
+        "collaborate",
+        "commission",
+        "discord",
+        "message",
+        "talk"
+      ],
+      "answer": "For commissions, project discussions or collaboration, join Kingez's Discord server. Describe the project, required features, version/stack and timeframe so he can assess the scope.",
+      "link": "discord",
+      "linkLabel": "Join Kingez's Discord"
+    },
+    {
+      "id": "pricing",
+      "title": "Commission details",
+      "aliases": [
+        "how much do you charge",
+        "what is your price",
+        "commission pricing",
+        "is it free",
+        "payment options",
+        "what does a bot cost"
+      ],
+      "keywords": [
+        "price",
+        "pricing",
+        "cost",
+        "charge",
+        "payment",
+        "commission",
+        "nitro",
+        "rates"
+      ],
+      "answer": "Commission scope and terms are discussed individually. A one-year Discord Nitro gift can be proposed for certain custom Discord bot projects, but complex integrations, hosting and ongoing support are not automatically included. Nothing is payable through this website.",
+      "link": "discord",
+      "linkLabel": "Discuss a quote"
+    },
+    {
+      "id": "public",
+      "title": "Public vs private projects",
+      "aliases": [
+        "is it open source",
+        "what is public",
+        "which repos are public",
+        "can i download code",
+        "download projects"
+      ],
+      "keywords": [
+        "public",
+        "private",
+        "source",
+        "opensource",
+        "download",
+        "github",
+        "repo"
+      ],
+      "answer": "Released public work includes OmniPanel, the PvP Pack, SENSE's public source and Kydora Home installers. Projects such as KingPro, ModAI and SA Exam Research Engine are private or in development. Their source is not exposed by this portfolio.",
+      "link": "github",
+      "linkLabel": "Browse Kingez's GitHub"
+    },
+    {
+      "id": "backend",
+      "title": "Backend & integration services",
+      "aliases": [
+        "backend developer",
+        "what backend work",
+        "node api",
+        "socket io systems",
+        "build me a dashboard"
+      ],
+      "keywords": [
+        "backend",
+        "api",
+        "node",
+        "express",
+        "socket",
+        "dashboard",
+        "realtime",
+        "integrations",
+        "pm2"
+      ],
+      "answer": "Kingez builds Node.js bot backends, APIs, real-time Socket.IO-style systems, automation and service integrations. Hosting and protected backends are separate from this GitHub Pages site.",
+      "link": "discord",
+      "linkLabel": "Discuss a backend project"
+    }
+  ]
+}

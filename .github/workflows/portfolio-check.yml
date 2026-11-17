@@ -23,5 +23,9 @@ jobs:
           node --check assets/public-answers.mjs
           node --check assets/portfolio-chat.mjs
           node --check backend/worker.mjs
+          node --check assets/welcome-logic.mjs
+          node --check assets/welcome-v5.mjs
+          node --check backend-vercel/api/ask.js
+          node --check backend-vercel/api/health.js
       - name: Run zero-dependency portfolio checks
-        run: node --test test/portfolio.test.js test/public-knowledge.test.mjs
+        run: node --test test/portfolio.test.js test/public-knowledge.test.mjs test/welcome-backend.test.mjs

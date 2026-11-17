@@ -263,7 +263,9 @@ footer { border-color: rgba(167,190,255,.12); }
 .command-empty { padding: 20px; color: #9cadca; }
 .command-hint { padding: 10px 4px 0; color: #8192b4; font-size: 11px; }
 .reveal { transition: opacity .8s cubic-bezier(.15,.8,.25,1), transform .8s cubic-bezier(.15,.8,.25,1); }
-.reveal:not(.visible) { transform: translateY(32px) scale(.985); }
+.reveal { opacity: 1; transform: none; }
+.has-js .reveal:not(.visible) { opacity: 0; transform: translateY(32px) scale(.985); }
+.has-js .reveal.visible { opacity: 1; transform: none; }
 @media (max-width: 1050px) {
   .brand span:last-child { display: none; }
   .nav-links { gap: 0; }

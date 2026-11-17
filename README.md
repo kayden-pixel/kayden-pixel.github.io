@@ -4,6 +4,30 @@
 
 A fast, zero-build portfolio covering Minecraft plugins, Discord automation, local AI assistants, Android software, connected-device tools, document research and Node.js backends.
 
+## V6 — proper multi-page portfolio (no more endless homepage)
+
+The site now uses **seven independent HTML pages**, each with its own URL, metadata, navigation state and section content:
+
+| Destination | URL | What it contains |
+| --- | --- | --- |
+| Home | [index.html](https://kayden-pixel.github.io/) | Intro, GitHub snapshot, page directory and three selected-project links |
+| Projects | [projects.html](https://kayden-pixel.github.io/projects.html) | All 12 projects, filters, search and project deep links |
+| Systems | [systems.html](https://kayden-pixel.github.io/systems.html) | Six-system interactive architecture explorer |
+| Services | [services.html](https://kayden-pixel.github.io/services.html) | Development services, Minecraft delivery scope and workflow |
+| Discord Bots | [commissions.html](https://kayden-pixel.github.io/commissions.html) | Bot commission terms, possible one-year Discord Nitro trade |
+| About | [about.html](https://kayden-pixel.github.io/about.html) | Developer profile, birthday (16 June 2001) and technical stack |
+| Contact | [contact.html](https://kayden-pixel.github.io/contact.html) | Public contact links and project brief guidance |
+
+**Mechanism:** Original inline base styling moved to `assets/base-v6.css`; new page layouts and responsive navigation live in `assets/pages-v6.css`. Each page reuses the same secure public chatbox, welcome animation, command palette, footer and original visual language. Navigation uses real `*.html` links, with a current-page marker and tested anchors. Every public FAQ response now links to the relevant new page; `backend-vercel/data/kingez-public.json` matches the public knowledge file exactly.
+
+**Deployment:** Github Pages publishes the static HTML/CSS/JS and sitemap directly from the repository. The optional separately hosted backend remains undeployed due to account permissions; the browser's existing no-key, reviewed public Q&A works without it. Jarvis's private desktop tools are never exposed to visitors.
+
+**Validation:**
+```bash
+node --test test/portfolio.test.js test/public-knowledge.test.mjs test/welcome-backend.test.mjs test/multipage.test.mjs
+```
+The multi-page test verifies all seven pages exist, their nav links and deep links resolve, repeated page chrome remains functional, the twelve cards only appear on Projects, and the six-system explorer only appears on Systems.
+
 ## V5 — welcome sequence, birthday and deployment-ready public API
 
 - First-visit **Kingez Systems boot animation** with original command-centre rings, CSS progress meter, visible Skip/Enter controls and auto-completion after 3.4 seconds. It never blocks the static site if JavaScript is off. For visitors who request reduced motion, it does not auto-run.

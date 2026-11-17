@@ -28,4 +28,4 @@ jobs:
           node --check backend-vercel/api/ask.js
           node --check backend-vercel/api/health.js
       - name: Run zero-dependency portfolio checks
-        run: node --test test/portfolio.test.js test/public-knowledge.test.mjs test/welcome-backend.test.mjs
+        run: node --test test/portfolio.test.js test/public-knowledge.test.mjs test/welcome-backend.test.mjs test/multipage.test.mjs

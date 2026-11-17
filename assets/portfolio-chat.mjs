@@ -11,6 +11,17 @@ import { answerQuestion, MAX_QUESTION_LENGTH } from './public-answers.mjs';
   const input = document.querySelector("#know-input");
   const status = document.querySelector("#know-status");
   const starters = Array.from(document.querySelectorAll(".know-starter"));
+  const commissionShortcut = document.querySelector("#ask-bot-trigger");
+  const remoteSetting = document.querySelector('meta[name="kingez-public-chat-api"]')?.content?.trim() || "";
+  // Disabled unless the owner explicitly enters an HTTPS URL for their deployed
+  // public-only Worker. The default website stays fully local in-browser.
+  const endpoint = (() => {
+    if (!remoteSetting) return null;
+    try {
+      const url = new URL(remoteSetting);
+      return url.protocol === "https:" && url.pathname === "/ask" ? url.href : null;
+    } catch (_) { return null; }
+  })();
   if (!button || !panel || !transcript || !form || !input) return;
 
   let knowledge = null;
@@ -84,6 +95,34 @@ import { answerQuestion, MAX_QUESTION_LENGTH } from './public-answers.mjs';
     return loading;
   }
 
+  async function getAnswer(question, data) {
+    const local = answerQuestion(question, data);
+    if (!endpoint) return local;
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 4000);
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST", mode: "cors", credentials: "omit",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }), signal: controller.signal
+      });
+      if (!response.ok) throw new Error("Public API unavailable");
+      const result = await response.json();
+      if (typeof result?.answer !== "string" || result.answer.length > 1200 ||
+          typeof result.matched !== "boolean") throw new Error("Invalid public API reply");
+      const allowedLink = links.has(result.link);
+      return {
+        answer: result.answer, matched: result.matched,
+        topic: result.topic || null,
+        link: allowedLink ? result.link : null,
+        linkLabel: allowedLink ? String(result.linkLabel || "Read more").slice(0, 50) : null
+      };
+    } catch (_) {
+      // An API timeout, cross-origin issue or Worker outage never breaks offline Q&A.
+      return local;
+    } finally { window.clearTimeout(timer); }
+  }
+
   async function ask(raw) {
     const question = String(raw ?? "").trim();
     if (!question || question.length > MAX_QUESTION_LENGTH) return;
@@ -99,7 +138,7 @@ import { answerQuestion, MAX_QUESTION_LENGTH } from './public-answers.mjs';
     if (submit) submit.disabled = true;
     try {
       const data = await loadKnowledge();
-      const result = data ? answerQuestion(question, data) : {
+      const result = data ? await getAnswer(question, data) : {
         answer: "The public profile is temporarily unavailable. You can still browse the projects or contact Kingez through Discord.",
         matched: false
       };
@@ -146,6 +185,10 @@ import { answerQuestion, MAX_QUESTION_LENGTH } from './public-answers.mjs';
   form.addEventListener("submit", event => {
     event.preventDefault();
     void ask(input.value);
+  });
+  commissionShortcut?.addEventListener("click", () => {
+    if (panel.hidden) openPanel();
+    void ask("Can you build me a Discord bot for one year of Nitro?");
   });
   starters.forEach(starter => starter.addEventListener("click", () => {
     if (panel.hidden) openPanel();

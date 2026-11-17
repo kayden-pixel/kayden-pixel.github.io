@@ -691,12 +691,34 @@
   <link rel="stylesheet" href="assets/experience.css">
   <link rel="stylesheet" href="assets/studio-v3.css">
   <link rel="stylesheet" href="assets/stark-v4.css">
+  <link rel="stylesheet" href="assets/welcome-v5.css">
   <script defer src="assets/experience.js"></script>
   <script defer src="assets/studio-v3.js"></script>
   <script type="module" src="assets/portfolio-chat.mjs"></script>
+  <script type="module" src="assets/welcome-v5.mjs"></script>
   <meta name="kingez-public-chat-api" content="">
 </head>
 <body>
+  <!-- Visible only when the JavaScript first-visit preference explicitly opens it. -->
+  <section class="welcome-intro" id="welcome-intro" role="dialog" aria-modal="true" aria-label="Welcome to Kingez Systems" hidden>
+    <span class="welcome-corner top" aria-hidden="true">KINGEZ SYSTEMS // INITIALIZING</span>
+    <div class="welcome-content">
+      <div class="welcome-orbit" aria-hidden="true">
+        <img class="welcome-symbol" src="assets/kingez-mark.svg" width="113" height="113" alt="">
+      </div>
+      <span class="welcome-eyebrow">ACCESS PROTOCOL // PUBLIC PORTFOLIO</span>
+      <h2 class="welcome-title">Welcome to <span>Kingez Systems</span></h2>
+      <p class="welcome-copy">Discord bots. AI assistants. Minecraft engineering. Connected software. Explore the systems behind the code.</p>
+      <div class="welcome-meter" aria-hidden="true"><span></span></div>
+      <span class="welcome-status" id="welcome-status" role="status" aria-live="polite">BOOTING PUBLIC INTERFACE</span>
+      <div class="welcome-actions">
+        <button type="button" id="welcome-skip">Skip intro</button>
+        <button type="button" id="welcome-enter">Enter portfolio →</button>
+      </div>
+    </div>
+    <span class="welcome-corner bottom" aria-hidden="true">ACCESS // PORTFOLIO ONLINE</span>
+  </section>
+
   <a class="skip-link" href="#top">Skip to content</a>
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <div class="glow" id="glow" aria-hidden="true"></div>
@@ -822,6 +844,7 @@
             <p>I'm especially comfortable fixing existing systems that are almost working but have weird version, permission, configuration or runtime problems. I use CFR when I need to inspect Java plugin behavior, compile against modern Paper APIs, and validate the final JAR instead of assuming a build is good because it compiled once.</p>
           </div>
           <div class="about-side">
+            <div class="fact birthday-fact"><small>MY BIRTHDAY</small><strong><time datetime="2001-06-16">16 June 2001</time></strong></div>
             <div class="fact"><small>MAIN LANGUAGE</small><strong>Node.js / JavaScript</strong></div>
             <div class="fact"><small>MINECRAFT</small><strong>Java · Paper · Purpur · Spigot ecosystem</strong></div>
             <div class="fact"><small>AI / AUTOMATION</small><strong>Python · local models · APIs · voice/tool calling</strong></div>

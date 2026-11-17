@@ -1210,6 +1210,28 @@
     </div>
   </footer>
 
+  <dialog class="command-palette" id="command-palette" aria-labelledby="command-title">
+    <div class="command-shell">
+      <div class="command-head">
+        <label for="command-search" id="command-title" style="position:absolute;clip:rect(0,0,0,0);white-space:nowrap">Search quick navigation</label>
+        <input id="command-search" class="command-search" type="search" autocomplete="off" placeholder="Jump to projects, services, contact…" aria-label="Search portfolio links">
+        <button id="command-close" class="command-close" type="button" aria-label="Close quick navigation">Esc ✕</button>
+      </div>
+      <div class="command-list" aria-label="Quick navigation results">
+        <a class="command-item" href="#top"><span>Home / introduction</span><small>PAGE</small></a>
+        <a class="command-item" href="#services"><span>Development services</span><small>PAGE</small></a>
+        <a class="command-item" href="#stack"><span>Technology stack</span><small>PAGE</small></a>
+        <a class="command-item" href="#work"><span>Projects / portfolio</span><small>PAGE</small></a>
+        <a class="command-item" href="#contact"><span>Contact / Discord</span><small>PAGE</small></a>
+        <a class="command-item" href="https://modrinth.com/plugin/omnipanel" target="_blank" rel="noopener noreferrer"><span>OmniPanel on Modrinth</span><small>EXTERNAL</small></a>
+        <a class="command-item" href="https://modrinth.com/resourcepack/kingez341yt" target="_blank" rel="noopener noreferrer"><span>Kingez PvP Pack</span><small>EXTERNAL</small></a>
+        <a class="command-item" href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer"><span>GitHub developer profile</span><small>EXTERNAL</small></a>
+      </div>
+      <p class="command-empty" id="command-empty" hidden>No matches. Try projects, GitHub or contact.</p>
+      <p class="command-hint">Press Ctrl / ⌘ + K or / to open. Escape to close.</p>
+    </div>
+  </dialog>
+
   <script>
     const nav = document.getElementById('nav');
     const glow = document.getElementById('glow');

@@ -915,7 +915,18 @@
           <p>Some projects are private or server-specific, so this portfolio focuses on the systems and engineering work behind them instead of pretending everything is an open-source demo.</p>
         </div>
 
-        <article class="card project reveal">
+        <div class="project-toolbar">
+          <div class="project-filters" role="group" aria-label="Filter portfolio projects">
+            <button type="button" class="filter-pill" data-filter="all" aria-pressed="true">All work</button>
+            <button type="button" class="filter-pill" data-filter="minecraft" aria-pressed="false">Minecraft</button>
+            <button type="button" class="filter-pill" data-filter="discord" aria-pressed="false">Discord</button>
+            <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">AI / interfaces</button>
+            <button type="button" class="filter-pill" data-filter="backend" aria-pressed="false">Backend</button>
+          </div>
+          <span id="project-count" class="project-count" aria-live="polite">8 projects</span>
+        </div>
+
+        <article class="card project reveal" data-categories="minecraft backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 01 · MINECRAFT</div>
@@ -952,7 +963,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="discord backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 02 · SECURITY</div>
@@ -978,7 +989,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 03 · MINECRAFT</div>
@@ -1004,7 +1015,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 04 · LIVE SERVER SETUP</div>
@@ -1036,7 +1047,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="ai backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 05 · AI / AUTOMATION</div>
@@ -1062,7 +1073,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 06 · PUBLIC MINECRAFT RELEASE</div>
@@ -1096,6 +1107,42 @@
               </div>
             </div>
           </div>
+        </article>
+
+        <article class="card project reveal" data-categories="discord ai backend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 07 · DISCORD / AI · PRIVATE DEVELOPMENT</div>
+              <h3>DevLaunch Bot</h3>
+              <p>A Discord developer-community assistant combining a guided setup panel with message-based conversation, topic-aware answers and project discovery. The goal is to make developer servers useful without requiring a slash command for every interaction.</p>
+              <div class="detail-list">
+                <div>Guided setup for channel routing, roles and assistant behavior</div>
+                <div>Message and mention replies with optional controlled scheduled activity</div>
+                <div>AI model and GitHub-based development help, designed around rate limits and fallbacks</div>
+              </div>
+            </div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Discord</span><span class="chip">AI</span><span class="chip">GitHub API</span></div>
+            <div class="proof-note">Private project — architecture and development work</div>
+          </div>
+          <div class="project-visual red"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>BOT</b><small>COMMUNITY</small></div><div class="metric"><b>API</b><small>PROJECT SEARCH</small></div><div class="metric"><b>AI</b><small>ASSISTANCE</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
+        </article>
+
+        <article class="card project reveal" data-categories="ai frontend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 08 · EXPERIMENTAL UI · IN DEVELOPMENT</div>
+              <h3>HoloDesk</h3>
+              <p>An experimental Windows interface exploring camera-based hand tracking, gesture-controlled panels and an animated sci-fi workspace. It brings together local desktop controls and interactive visualization while remaining independent from the Jarvis assistant.</p>
+              <div class="detail-list">
+                <div>Hand and pinch gesture tracking with stateful interaction controls</div>
+                <div>Floating workspace panels and local file/media viewing concepts</div>
+                <div>Focus on smoother, less sensitive gestures and practical desktop usability</div>
+              </div>
+            </div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Windows UI</span><span class="chip">Computer Vision</span><span class="chip">Prototype</span></div>
+            <div class="proof-note">Experimental work — not presented as a public release</div>
+          </div>
+          <div class="project-visual"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>UI</b><small>SPATIAL HUD</small></div><div class="metric"><b>CV</b><small>HAND TRACKING</small></div><div class="metric"><b>3D</b><small>VISUAL DESIGN</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
         </article>
       </div>
     </section>

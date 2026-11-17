@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07080d">
-  <meta name="description" content="Kingez — Minecraft server developer focused on complete Paper/Purpur setups, custom plugins, Node.js systems, Discord automation, and AI tooling.">
+  <meta name="theme-color" content="#060913">
+  <meta name="description" content="Kingez developer portfolio — Minecraft plugins, Discord automation, Jarvis-style AI, Node.js backends, real-time systems and developer tools.">
   <meta property="og:title" content="Kingez — Developer Portfolio">
   <meta property="og:description" content="Minecraft server setups, custom Paper plugins, Node.js and Discord systems, Java, Python AI tooling, and real server engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kayden-pixel.github.io/">
-  <title>Kingez — Minecraft Developer & Systems Builder</title>
+  <title>Kingez — Minecraft, AI & Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -685,9 +685,13 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
+  <link rel="stylesheet" href="assets/experience.css">
+  <script defer src="assets/experience.js"></script>
 </head>
 <body>
-  <div class="glow" id="glow"></div>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
 
   <nav id="nav">
     <div class="wrap nav-inner">
@@ -696,13 +700,17 @@
         <span>Kingez</span>
         <span>/ Minecraft + backend developer</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="nav-cta" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Discord ↗</a>
+      <div class="nav-tools">
+        <button class="command-trigger" id="command-trigger" type="button" aria-label="Open quick navigation"><span class="command-label">⌕ &nbsp; Search</span><kbd>Ctrl K</kbd></button>
+        <a class="nav-cta" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+        <button class="mobile-menu-trigger" id="mobile-menu" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation">☰</button>
+      </div>
     </div>
   </nav>
 
@@ -710,10 +718,10 @@
     <header class="hero">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Open to Minecraft development work</div>
-          <h1>I build <span class="gradient-text">Minecraft servers</span> people can actually use.</h1>
+          <div class="eyebrow"><span class="dot"></span> Minecraft • AI • backend engineering</div>
+          <h1>I build <span class="gradient-text">systems that actually work.</span></h1>
           <p class="hero-copy">
-            I'm <strong>Kingez</strong>. Most of my work is around Minecraft servers, plugins, Discord systems and the tooling behind them.
+            I'm <strong>Kingez</strong> — a developer building Minecraft platforms, Discord bots, AI assistants and the backend systems that connect everything.
             <strong>Node.js is the language I use the most</strong>. I use Java for Paper/Purpur plugin work, and Python mainly when I'm building AI, automation or model-driven tools. I like taking a server from "blank host" to something that is configured, connected, tested and ready for players.
           </p>
           <div class="hero-actions">
@@ -752,11 +760,29 @@
               <strong>kayden-pixel</strong>
               <small>GitHub developer profile</small>
             </div>
-            <div class="profile-status">ONLINE</div>
+            <div class="profile-status">GITHUB PROFILE</div>
           </div>
         </div>
       </div>
     </header>
+
+    <div class="capability-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Node.js &amp; Real-time APIs</span><span>Minecraft Paper Plugins</span><span>Discord Security</span><span>Local AI &amp; Automation</span><span>Systems Engineering</span>
+        <span>Node.js &amp; Real-time APIs</span><span>Minecraft Paper Plugins</span><span>Discord Security</span><span>Local AI &amp; Automation</span><span>Systems Engineering</span>
+      </div>
+    </div>
+
+    <section class="github-pulse" aria-label="Portfolio numbers">
+      <div class="wrap">
+        <div class="pulse-grid">
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">⌘</span><div><strong data-github-stat="repos">—</strong><small>Public GitHub repositories</small></div></div>
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">◎</span><div><strong data-github-stat="followers">—</strong><small>GitHub followers</small></div></div>
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">✦</span><div><strong>08</strong><small>Selected projects and systems</small></div></div>
+        </div>
+        <p class="pulse-foot"><span id="github-data-status" role="status">Fetching public GitHub data…</span> <a href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer">See the GitHub profile ↗</a></p>
+      </div>
+    </section>
 
     <section class="compact">
       <div class="wrap">
@@ -983,7 +1009,7 @@
             <div>
               <div class="project-num">PROJECT 04 · LIVE SERVER SETUP</div>
               <h3>Skystrike Survival</h3>
-              <p>A survival/SMP server setup I actively work on myself, which is useful because I have to deal with the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
+              <p>A previous survival/SMP server deployment, now retired, where I handled the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
               <div class="detail-list">
                 <div>Paper-based setup with a dedicated lobby and survival gameplay flow</div>
                 <div>Multiverse + WorldGuard configuration with per-world rules and spawn protection</div>
@@ -1000,7 +1026,7 @@
               <div class="window-bar"><i></i><i></i><i></i></div>
               <div class="window-body">
                 <div class="metric-row">
-                  <div class="metric"><b>SMP</b><small>LIVE SETUP</small></div>
+                  <div class="metric"><b>SMP</b><small>PAST DEPLOYMENT</small></div>
                   <div class="metric"><b>LP</b><small>PERMISSIONS</small></div>
                   <div class="metric"><b>WG</b><small>PROTECTION</small></div>
                 </div>

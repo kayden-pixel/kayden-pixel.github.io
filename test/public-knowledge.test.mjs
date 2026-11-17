@@ -55,16 +55,22 @@ test("chat refuses unrelated, injection-like and oversized questions", () => {
   assert.equal(huge.matched, false);
 });
 
-test("site contains exactly one discoverable chat panel and commission shortcut", () => {
-  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+test("site chat remains on every page and Nitro commission shortcut lives on Discord Bots page", () => {
+  const pages = ["index.html","projects.html","systems.html","services.html","commissions.html","about.html","contact.html"];
   const js = readFileSync(new URL("../assets/portfolio-chat.mjs", import.meta.url), "utf8");
   const css = readFileSync(new URL("../assets/stark-v4.css", import.meta.url), "utf8");
-  for (const id of ["commissions","know-panel","know-trigger","know-messages","know-input","know-form","ask-bot-trigger"]) {
-    assert.ok(html.includes('id="' + id + '"'), "Missing " + id);
+  for (const page of pages) {
+    const markup = readFileSync(new URL("../" + page, import.meta.url), "utf8");
+    for (const id of ["know-panel","know-trigger","know-messages","know-input","know-form"]) {
+      assert.ok(markup.includes('id="' + id + '"'), page + " missing " + id);
+    }
+    assert.match(markup, /src="assets\/portfolio-chat.mjs"/);
   }
-  assert.match(html, /1 <small>YEAR<\/small>/);
-  assert.match(html, /Discord Nitro gift/);
-  assert.match(html, /src="assets\/portfolio-chat.mjs"/);
+  const commissions = readFileSync(new URL("../commissions.html", import.meta.url), "utf8");
+  assert.match(commissions, /id="commissions"/);
+  assert.match(commissions, /id="ask-bot-trigger"/);
+  assert.match(commissions, /1 <small>YEAR<\/small>/);
+  assert.match(commissions, /Discord Nitro gift/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /@media\(max-width:620px\)/);
   assert.ok(!js.includes("innerHTML"));

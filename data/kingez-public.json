@@ -41,6 +41,33 @@
       "linkLabel": "Kingez on GitHub"
     },
     {
+      "id": "birthday",
+      "title": "Birthday",
+      "aliases": [
+        "when is kingez birthday",
+        "what is kingez birthday",
+        "when was kingez born",
+        "what is your birthday",
+        "what is your birth date",
+        "how old is kingez",
+        "when is his birthday",
+        "birthday date",
+        "kingez date of birth"
+      ],
+      "keywords": [
+        "birthday",
+        "born",
+        "birth",
+        "june",
+        "2001",
+        "date",
+        "age"
+      ],
+      "answer": "Kingez lists his birthday as 16 June 2001 on his public developer portfolio.",
+      "link": "website",
+      "linkLabel": "View the About section"
+    },
+    {
       "id": "projects",
       "title": "Projects & systems",
       "aliases": [

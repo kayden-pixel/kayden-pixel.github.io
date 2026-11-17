@@ -32,6 +32,12 @@ import { answerQuestion, MAX_QUESTION_LENGTH } from './public-answers.mjs';
   const remember = [];
   const links = new Set([
     "https://kayden-pixel.github.io/",
+    "https://kayden-pixel.github.io/projects.html",
+    "https://kayden-pixel.github.io/systems.html",
+    "https://kayden-pixel.github.io/services.html",
+    "https://kayden-pixel.github.io/commissions.html",
+    "https://kayden-pixel.github.io/about.html",
+    "https://kayden-pixel.github.io/contact.html",
     "https://github.com/kayden-pixel",
     "https://discord.gg/SdCvw52vzS",
     "https://youtube.com/@kingez341yt",

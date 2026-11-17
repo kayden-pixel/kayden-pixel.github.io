@@ -992,12 +992,14 @@
 
         <p class="project-empty" id="project-empty" hidden>No projects match your search. Try another keyword or category.</p>
 
-        <article class="card project reveal" data-categories="minecraft backend">
+        <article class="card project reveal featured" id="project-omnipanel" data-categories="minecraft backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 01 · MINECRAFT</div>
+              <span class="project-status released">Public release</span>
               <h3>OmniPanel</h3>
               <p>My biggest public Minecraft plugin. OmniPanel is an all-in-one server administration platform for modern Paper/Purpur servers. It combines staff tools, player management, Punishment X, Command Hub V5, regions, ranks, kits, homes, AutoMod, authentication, alerts, diagnostics, Multiverse world controls, Velocity networking and DiscordSRV integration around one main <code>/panel</code> workflow.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>Permission-gated inventory menus and plugin integrations form a central operations surface.</li><li>Admin systems coordinate worlds, player actions, ranks, protections and diagnostics.</li><li>Public Modrinth releases offer an installation path; actual version compatibility varies.</li></ul></details>
               <div class="detail-list">
                 <div>Hybrid inventory GUIs + native Minecraft dialogs for forms, confirmations and settings</div>
                 <div>Paper/Purpur 26.2–26.3 support with Java 21-compatible plugin bytecode</div>
@@ -1029,12 +1031,14 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="discord backend">
+        <article class="card project reveal featured" id="project-modai" data-categories="discord backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 02 · SECURITY</div>
+              <span class="project-status private">Private source</span>
               <h3>ModAI</h3>
               <p>A Discord security/moderation system I have rebuilt and upgraded through many versions. The core idea is panel-first: keep the public command list small, put the real controls in the panel, and keep security systems such as anti-nuke, anti-raid, anti-leak, AutoMod, role/staff protection, incidents, recovery and diagnostics connected instead of split across random commands.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>Event ingestion and incident deduplication reduce duplicate enforcement.</li><li>Policy versioning and evidence records support moderator review and appeals.</li><li>High-impact actions require permission hierarchy checks, deduplication and safe recovery.</li></ul></details>
             </div>
             <div class="project-tags">
               <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Discord</span><span class="chip">Security</span><span class="chip">Components V2</span>
@@ -1055,10 +1059,11 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="minecraft">
+        <article class="card project reveal" id="project-skyspawn-protection" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 03 · MINECRAFT</div>
+              <span class="project-status private">Private plugin</span>
               <h3>SkySpawn Protection</h3>
               <p>A custom Paper spawn/region protection plugin built for practical server use. It handles region entry/exit behavior, PvP and combat-exit rules, pearls, elytra, block break/place, explosions, fire, fluids, pistons and mob-griefing, with profiles, snapshots, health checks, audit logs and live repair logic.</p>
             </div>
@@ -1081,10 +1086,11 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="minecraft">
+        <article class="card project reveal" id="project-skystrike-survival" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 04 · LIVE SERVER SETUP</div>
+              <span class="project-status retired">Retired server</span>
               <h3>Skystrike Survival</h3>
               <p>A previous survival/SMP server deployment, now retired, where I handled the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
               <div class="detail-list">
@@ -1113,12 +1119,14 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="ai backend">
+        <article class="card project reveal featured" id="project-kingpro-jarvis" data-categories="ai backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 05 · AI / AUTOMATION</div>
+              <span class="project-status private">Private source</span>
               <h3>KingPro / Jarvis</h3>
               <p>My long-running local AI assistant project. It mixes wake-word voice control, speech-to-text/text-to-speech, model routing, tool calling, Telegram remote control, multi-monitor vision, connected-app controls, local-device integration and recovery/security logic. Python handles a lot of the AI layer while Node.js is used where it makes more sense for services and integrations.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>Separate voice and text pipelines can route to different model providers.</li><li>Capability plugins run inside a permission-aware loading and action context.</li><li>Local desktop UI and device integrations are subject to their configured permissions.</li></ul></details>
             </div>
             <div class="project-tags">
               <span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">AI</span><span class="chip">Voice</span><span class="chip">Automation</span>
@@ -1139,10 +1147,11 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="minecraft">
+        <article class="card project reveal" id="project-kingez-pvp-pack" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 06 · PUBLIC MINECRAFT RELEASE</div>
+              <span class="project-status released">Public release</span>
               <h3>Kingez341YT PvP Pack</h3>
               <p>A public PvP resource pack I maintain on Modrinth. It focuses on practical combat visibility rather than replacing the whole Minecraft style: short swords, lower fire, smaller totems, outlined ores, cleaner particles, HUD/GUI work, item tweaks and combat-focused animations.</p>
               <div class="detail-list">
@@ -1175,10 +1184,11 @@
           </div>
         </article>
 
-        <article class="card project reveal" data-categories="discord ai backend">
+        <article class="card project reveal" id="project-devlaunch-bot" data-categories="discord ai backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 07 · DISCORD / AI · PRIVATE DEVELOPMENT</div>
+              <span class="project-status private">Private project</span>
               <h3>DevLaunch Bot</h3>
               <p>A Discord developer-community assistant combining a guided setup panel with message-based conversation, topic-aware answers and project discovery. The goal is to make developer servers useful without requiring a slash command for every interaction.</p>
               <div class="detail-list">
@@ -1193,10 +1203,11 @@
           <div class="project-visual red"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>BOT</b><small>COMMUNITY</small></div><div class="metric"><b>API</b><small>PROJECT SEARCH</small></div><div class="metric"><b>AI</b><small>ASSISTANCE</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
         </article>
 
-        <article class="card project reveal" data-categories="ai frontend">
+        <article class="card project reveal" id="project-holodesk" data-categories="ai frontend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 08 · EXPERIMENTAL UI · IN DEVELOPMENT</div>
+              <span class="project-status prototyping">Prototype</span>
               <h3>HoloDesk</h3>
               <p>An experimental Windows interface exploring camera-based hand tracking, gesture-controlled panels and an animated sci-fi workspace. It brings together local desktop controls and interactive visualization while remaining independent from the Jarvis assistant.</p>
               <div class="detail-list">
@@ -1209,6 +1220,86 @@
             <div class="proof-note">Experimental work — not presented as a public release</div>
           </div>
           <div class="project-visual"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>UI</b><small>SPATIAL HUD</small></div><div class="metric"><b>CV</b><small>HAND TRACKING</small></div><div class="metric"><b>3D</b><small>VISUAL DESIGN</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
+        </article>
+
+        <article class="card project reveal featured" id="project-sense" data-categories="devices ai backend frontend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 09 · ANDROID / LOCAL-FIRST BETA</div>
+              <span class="project-status prototyping">Public beta</span>
+              <h3>SENSE</h3>
+              <p>An open-source Android project exploring device sensing, privacy-focused interfaces, shared presence, LiveKit audio and experimental radar experiences. The service API exists, but physical-device calibration and accuracy testing are still in progress.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>Kotlin + Jetpack Compose, with encrypted local settings and contextual permissions</li><li>Optional Cloudflare service and LiveKit integration for authenticated shared features</li><li>Experimental ranging and vision features explicitly separated from verified hardware behavior</li></ul></details>
+            </div>
+            <div class="project-tags"><span class="chip">Kotlin</span><span class="chip">Compose</span><span class="chip">Android</span><span class="chip">Cloudflare</span><span class="chip">LiveKit</span></div>
+            <div class="project-actions"><a class="project-link primary-link" href="https://github.com/kayden-pixel/SENSE" target="_blank" rel="noopener noreferrer">Explore SENSE on GitHub ↗</a></div>
+            <div class="proof-note">Public source · early beta, not hardware-validated</div>
+          </div>
+          <div class="project-visual">
+            <div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body"><div class="metric-row"><div class="metric"><b>SENSE</b><small>ANDROID</small></div><div class="metric"><b>BLE</b><small>EXPERIMENTAL</small></div><div class="metric"><b>API</b><small>PUBLIC SERVICE</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project reveal featured" id="project-kydora-home" data-categories="devices backend frontend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 10 · WINDOWS + ANDROID / CROSS-DEVICE</div>
+              <span class="project-status released">Public downloads</span>
+              <h3>Kydora Home</h3>
+              <p>A cross-device companion system for trusted Windows PCs and Android phones, built around approved pairing and encrypted transfers. A public GitHub release feed distributes the apps while the application source remains private.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>QR or invite pairing, trusted-home membership and per-device approval</li><li>Tailscale remote connectivity between endpoints, alongside same-Wi-Fi device discovery</li><li>Release SHA-256 checks for downloads; devices must be connected and configured</li></ul></details>
+            </div>
+            <div class="project-tags"><span class="chip">Windows</span><span class="chip">Android</span><span class="chip">Device pairing</span><span class="chip">Encryption</span><span class="chip">Tailscale</span></div>
+            <div class="project-actions"><a class="project-link primary-link" href="https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest" target="_blank" rel="noopener noreferrer">Download Kydora Home ↗</a><a class="project-link primary-link" href="https://github.com/kayden-pixel/Kydora-Home-Downloads" target="_blank" rel="noopener noreferrer">Release repository ↗</a></div>
+            <div class="proof-note">Released installers · proprietary source</div>
+          </div>
+          <div class="project-visual">
+            <div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body"><div class="metric-row"><div class="metric"><b>PAIR</b><small>APPROVAL</small></div><div class="metric"><b>E2E</b><small>TRANSFER</small></div><div class="metric"><b>SHA</b><small>VERIFY</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project reveal featured" id="project-sa-exam-research" data-categories="ai backend frontend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 11 · EDUCATION / LOCAL RESEARCH PLATFORM</div>
+              <span class="project-status private">Private development</span>
+              <h3>SA Exam Research Engine</h3>
+              <p>A local-first engine for researching South African school exams. It indexes source-tagged papers, retrieves and analyzes questions, and provides a FastAPI + React dashboard without depending on a hosted language model.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>PDF ingestion with metadata, duplicate detection and SQLite FTS5 search</li><li>Rule-based question parsing, marks and review flags backed by source references</li><li>Local API and dashboard; actual neural model training is not implemented</li></ul></details>
+            </div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">SQLite FTS5</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">Document analysis</span></div>
+            
+            <div class="proof-note">Private research code · no trained prediction model</div>
+          </div>
+          <div class="project-visual red">
+            <div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body"><div class="metric-row"><div class="metric"><b>PDF</b><small>INGEST</small></div><div class="metric"><b>FTS5</b><small>SEARCH</small></div><div class="metric"><b>API</b><small>LOCAL</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project reveal" id="project-orbital-strike" data-categories="minecraft backend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 12 · MINECRAFT / CUSTOM GAMEPLAY PLUGIN</div>
+              <span class="project-status private">Private plugin</span>
+              <h3>Orbital Strike</h3>
+              <p>A custom Minecraft combat and orbital-ability plugin built around unlock progression, configurable attack effects and balance controls. It brings together player-facing selection menus, persistent upgrades and server-side ability rules.</p>
+              <details class="engineering-notes"><summary>Explore the engineering details</summary><ul><li>Unlock and progression logic for abilities rather than uncontrolled free-use commands</li><li>Reusable ability tiers and server-controlled cooldown/activation rules</li><li>Java/Paper event handling and inventory GUI workflows for players and staff</li></ul></details>
+            </div>
+            <div class="project-tags"><span class="chip">Java</span><span class="chip">Paper</span><span class="chip">Gameplay systems</span><span class="chip">GUI</span><span class="chip">Persistence</span></div>
+            
+            <div class="proof-note">Private server plugin · features depend on active configuration</div>
+          </div>
+          <div class="project-visual">
+            <div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body"><div class="metric-row"><div class="metric"><b>ORB</b><small>ABILITIES</small></div><div class="metric"><b>XP</b><small>PROGRESSION</small></div><div class="metric"><b>GUI</b><small>CONTROL</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+            </div>
+          </div>
         </article>
       </div>
     </section>

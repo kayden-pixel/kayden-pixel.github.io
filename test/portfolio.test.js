@@ -4,7 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const pageFiles = ['index.html','projects.html','systems.html','services.html','commissions.html','about.html','contact.html'];
+const pages = Object.fromEntries(pageFiles.map(name => [name, fs.readFileSync(path.join(root, name), 'utf8')]));
+// Combined content for cross-page feature assertions; uniqueness and anchors are checked per document.
+const html = Object.values(pages).join('\n');
 const css = fs.readFileSync(path.join(root, 'assets/experience.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'assets/experience.js'), 'utf8');
 
@@ -19,15 +22,19 @@ test('required layout sections and enhancement assets exist', () => {
   assert.match(js, /AbortController/);
 });
 
-test('all element IDs are unique', () => {
-  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
-  assert.equal(ids.length, new Set(ids).size);
+test('all element IDs are unique within every independent page', () => {
+  for (const [file, content] of Object.entries(pages)) {
+    const ids = [...content.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(ids.length, new Set(ids).size, file);
+  }
 });
 
-test('local hash links point to valid IDs', () => {
-  const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
-  for (const [, href] of html.matchAll(/\bhref="#([^"]+)"/g)) {
-    assert.ok(ids.has(href), 'Missing local anchor: #' + href);
+test('local hash links point to IDs on the same page', () => {
+  for (const [file, content] of Object.entries(pages)) {
+    const ids = new Set([...content.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
+    for (const [, target] of content.matchAll(/\bhref="#([^"]+)"/g)) {
+      assert.ok(ids.has(target), file + ' missing local anchor #' + target);
+    }
   }
 });
 

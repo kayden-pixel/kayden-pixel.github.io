@@ -9,6 +9,7 @@ import knowledge from '../data/kingez-public.json' with { type: 'json' };
 import snapshot from '../backend-vercel/data/kingez-public.json' with { type: 'json' };
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const aboutHtml = readFileSync(new URL('../about.html', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../assets/welcome-v5.css', import.meta.url), 'utf8');
 const script = readFileSync(new URL('../assets/welcome-v5.mjs', import.meta.url), 'utf8');
 const answerEngine = readFileSync(new URL('../assets/public-answers.mjs', import.meta.url), 'utf8');
@@ -60,7 +61,7 @@ test('welcome screen has skip, enter, replay, accessible labels and no JS fallba
 });
 
 test('birthday is published consistently in about section and public knowledge', () => {
-  assert.match(html, /<time datetime="2001-06-16">16 June 2001<\/time>/);
+  assert.match(aboutHtml, /<time datetime="2001-06-16">16 June 2001<\/time>/);
   assert.equal(knowledge.topics.find(x=>x.id==='birthday')?.answer,
     'Kingez lists his birthday as 16 June 2001 on his public developer portfolio.');
   const response = answerQuestion("When is Kingez's birthday?", knowledge);

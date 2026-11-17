@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <script>document.documentElement.classList.add("has-js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#060913">
+  <meta name="theme-color" content="#050815">
   <meta name="description" content="Kingez developer portfolio — Minecraft plugins, Discord automation, Jarvis-style AI, Node.js backends, real-time systems and developer tools.">
   <meta property="og:title" content="Kingez — Developer Portfolio">
   <meta property="og:description" content="Minecraft server setups, custom Paper plugins, Node.js and Discord systems, Java, Python AI tooling, and real server engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kayden-pixel.github.io/">
-  <title>Kingez — Minecraft, AI & Backend Developer</title>
+  <title>Kingez — AI, Minecraft & Systems Engineering</title>
+  <meta property="og:site_name" content="Kingez Systems">
+  <link rel="icon" href="assets/kingez-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -687,7 +689,9 @@
     }
   </style>
   <link rel="stylesheet" href="assets/experience.css">
+  <link rel="stylesheet" href="assets/studio-v3.css">
   <script defer src="assets/experience.js"></script>
+  <script defer src="assets/studio-v3.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#top">Skip to content</a>
@@ -697,13 +701,14 @@
   <nav id="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Kingez home">
-        <span class="brand-mark">K</span>
-        <span>Kingez</span>
-        <span>/ Minecraft + backend developer</span>
+        <span class="brand-mark"><img src="assets/kingez-mark.svg" alt="" width="41" height="41"></span>
+        <span class="brand-wordmark">Kingez<small>SYSTEMS · STUDIO</small></span>
+        <span>/ engineering interactive software</span>
       </a>
       <div class="nav-links" id="nav-links" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
+        <a href="#systems">Systems</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </div>
@@ -720,10 +725,10 @@
       <div class="wrap hero-grid">
         <div class="reveal">
           <div class="eyebrow"><span class="dot"></span> Minecraft • AI • backend engineering</div>
-          <h1>I build <span class="gradient-text">systems that actually work.</span></h1>
+          <h1>I build <span class="gradient-text">systems beyond the ordinary.</span></h1>
           <p class="hero-copy">
-            I'm <strong>Kingez</strong> — a developer building Minecraft platforms, Discord bots, AI assistants and the backend systems that connect everything.
-            <strong>Node.js is the language I use the most</strong>. I use Java for Paper/Purpur plugin work, and Python mainly when I'm building AI, automation or model-driven tools. I like taking a server from "blank host" to something that is configured, connected, tested and ready for players.
+            I'm <strong>Kingez</strong>. I build Minecraft platforms, local AI assistants, Discord security, connected-device apps and the backend systems linking them.
+            <strong>Node.js is my everyday language</strong>, alongside Java for Paper and Python for automation and AI. I care about how the pieces connect: permissions, reliable state, recovery, clean interfaces and actual usability.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#work">View selected work <span>↓</span></a>
@@ -734,6 +739,11 @@
             <span>Node.js</span>
             <span>Java 21</span>
             <span>Python + AI</span>
+            <span>Android / Kotlin</span>
+          </div>
+          <div class="hero-dossier">
+            <div><strong>Developer portfolio · 2026</strong><small>Desktop AI · Minecraft · Discord · connected systems</small></div>
+            <em>SELECTED WORK ↓</em>
           </div>
         </div>
 
@@ -743,6 +753,7 @@
             <div class="terminal-title">KINGEZ.DEV</div>
           </div>
           <div class="terminal-body">
+            <img class="hero-mark" src="assets/kingez-mark.svg" alt="" aria-hidden="true">
             <div><span class="prompt">➜</span> <span class="command">whoami</span></div>
             <div class="result">minecraft systems developer + automation builder</div><br>
             <div><span class="prompt">➜</span> <span class="command">stack --primary</span></div>
@@ -779,7 +790,7 @@
         <div class="pulse-grid">
           <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">⌘</span><div><strong data-github-stat="repos">—</strong><small>Public GitHub repositories</small></div></div>
           <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">◎</span><div><strong data-github-stat="followers">—</strong><small>GitHub followers</small></div></div>
-          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">✦</span><div><strong>08</strong><small>Selected projects and systems</small></div></div>
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">✦</span><div><strong>12</strong><small>Selected projects and systems</small></div></div>
         </div>
         <p class="pulse-foot"><span id="github-data-status" role="status">Fetching public GitHub data…</span> <a href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer">See the GitHub profile ↗</a></p>
       </div>
@@ -790,7 +801,7 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">About me</div>
-            <h2>I care more about the finished server than the tech buzzwords.</h2>
+            <h2>From one plugin to the whole architecture.</h2>
           </div>
           <p>I build things because I run and manage real communities myself. That means I end up dealing with the boring-but-important parts too: permissions, broken plugin interactions, upgrades, world rules, build errors, staff tooling and player-facing polish.</p>
         </div>
@@ -817,9 +828,9 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">What I actually do</div>
-            <h2>I can take a Minecraft server from empty to launch-ready.</h2>
+            <h2>Software built across different worlds.</h2>
           </div>
-          <p>That includes the server structure, lobby/world setup, permissions, plugin stack, custom code, Discord side, testing and the small details players notice when something is wrong.</p>
+          <p>From server plugins and Discord automation to local AI, connected devices and APIs, I work on both the visible experience and the systems that keep it running.</p>
         </div>
 
         <div class="grid-3">
@@ -906,14 +917,64 @@
       </div>
     </section>
 
+    <section id="systems" class="systems-section" aria-labelledby="systems-heading">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Architecture / Systems Lab</div>
+            <h2 id="systems-heading">See what's happening behind the interface.</h2>
+          </div>
+          <p class="systems-lead">Switch between projects to explore the <strong>actual engineering ideas</strong> behind them: inputs, routing, safety controls, data and integration. These are architectural summaries, not simulated live dashboards.</p>
+        </div>
+        <div class="lab-shell reveal">
+          <div class="lab-topbar">
+            <small>STUDIO / ARCHITECTURE EXPLORER</small>
+            <small class="lab-light">INTERACTIVE DOCUMENTATION</small>
+          </div>
+          <div class="lab-tabs" role="group" aria-label="Choose a software system">
+            <button class="lab-tab" type="button" data-system="kingpro" aria-pressed="true">KingPro</button>
+            <button class="lab-tab" type="button" data-system="modai" aria-pressed="false">ModAI</button>
+            <button class="lab-tab" type="button" data-system="kydora" aria-pressed="false">Kydora Home</button>
+            <button class="lab-tab" type="button" data-system="exam" aria-pressed="false">SA Exam Engine</button>
+            <button class="lab-tab" type="button" data-system="sense" aria-pressed="false">SENSE</button>
+            <button class="lab-tab" type="button" data-system="omnipanel" aria-pressed="false">OmniPanel</button>
+          </div>
+          <div class="lab-body" id="lab-content">
+            <div class="lab-detail" aria-live="polite" aria-atomic="true">
+              <span class="lab-eyebrow" id="lab-eyebrow">DESKTOP AI / PRIVATE SOURCE</span>
+              <h3 id="lab-title">KingPro · Personal AI Command Center</h3>
+              <p id="lab-description">A Windows-first assistant that coordinates voice input, multiple AI models, capability plugins, trusted tools and computer controls. Individual actions are permission-scoped rather than unrestricted.</p>
+              <ul class="lab-highlights" id="lab-highlights">
+                <li>Voice and text pipelines remain separate so text can continue when live voice disconnects.</li>
+                <li>Model routing and tool invocation share a controlled context, with approvals for sensitive actions.</li>
+                <li>Python plugins can be loaded independently without coupling every capability to the core UI.</li>
+              </ul>
+              <div class="lab-tech" id="lab-tech"><span class="chip">Python</span><span class="chip">PyQt6</span><span class="chip">Local tools</span><span class="chip">Model routing</span></div>
+              <p class="lab-note" id="lab-note">Current development is private. Features depend on configured providers and trusted local permissions.</p>
+            </div>
+            <div class="lab-map" aria-label="Simplified system architecture flow">
+              <div class="lab-map-label">DATA / CONTROL FLOW</div>
+              <div class="lab-pipeline">
+                <div class="lab-node"><em>01</em><strong data-lab-node>Input &amp; voice</strong></div>
+                <div class="lab-node"><em>02</em><strong data-lab-node>Model router</strong></div>
+                <div class="lab-node"><em>03</em><strong data-lab-node>Permission gates</strong></div>
+                <div class="lab-node"><em>04</em><strong data-lab-node>Local tools</strong></div>
+              </div>
+              <p class="lab-map-caption" id="lab-caption">Conceptual architecture — not a live system telemetry view.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="work">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
             <div class="kicker">Selected systems</div>
-            <h2>Projects built around real use.</h2>
+            <h2>12 projects. Different problems. Real engineering.</h2>
           </div>
-          <p>Some projects are private or server-specific, so this portfolio focuses on the systems and engineering work behind them instead of pretending everything is an open-source demo.</p>
+          <p>Browse public releases, private builds and experimental prototypes. Each project is labelled so you can see what is shipped and what is still being developed.</p>
         </div>
 
         <div class="project-toolbar">
@@ -922,10 +983,14 @@
             <button type="button" class="filter-pill" data-filter="minecraft" aria-pressed="false">Minecraft</button>
             <button type="button" class="filter-pill" data-filter="discord" aria-pressed="false">Discord</button>
             <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">AI / interfaces</button>
+            <button type="button" class="filter-pill" data-filter="devices" aria-pressed="false">Devices</button>
             <button type="button" class="filter-pill" data-filter="backend" aria-pressed="false">Backend</button>
           </div>
-          <span id="project-count" class="project-count" aria-live="polite">8 projects</span>
+          <label class="project-search-wrap"><span aria-hidden="true">⌕</span><input class="project-search" id="project-search" type="search" autocomplete="off" placeholder="Search projects or technologies…" aria-label="Search projects"></label>
+          <span id="project-count" class="project-count" aria-live="polite">12 projects</span>
         </div>
+
+        <p class="project-empty" id="project-empty" hidden>No projects match your search. Try another keyword or category.</p>
 
         <article class="card project reveal" data-categories="minecraft backend">
           <div class="project-copy">
@@ -1187,8 +1252,8 @@
       <div class="wrap">
         <div class="contact reveal">
           <div class="kicker">Let's build</div>
-          <h2>Need a Minecraft setup that is more than a pile of plugins?</h2>
-          <p>If you're building a Minecraft setup, tell me the target version, server software, game mode, plugin list and what the final package needs to include. I can work on full server setups, custom Paper/Purpur systems, fixing existing setups, Discord integration and the backend tooling around them.</p>
+          <h2>Building a project that needs more than just a pretty UI?</h2>
+          <p>Whether it's a Paper server, a Discord automation system, an AI tool or a connected-app prototype, tell me what you need it to do, your current stack and where you're stuck. I can help with architecture, integrations, debugging and the details that make software dependable.</p>
           <div class="social-row">
             <a class="button primary" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Join my Discord ↗</a>
             <a class="button secondary" href="https://github.com/kayden-pixel" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -1211,6 +1276,7 @@
     </div>
   </footer>
 
+  <p id="copy-status" role="status" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)"></p>
   <dialog class="command-palette" id="command-palette" aria-labelledby="command-title">
     <div class="command-shell">
       <div class="command-head">
@@ -1222,6 +1288,7 @@
         <a class="command-item" href="#top"><span>Home / introduction</span><small>PAGE</small></a>
         <a class="command-item" href="#services"><span>Development services</span><small>PAGE</small></a>
         <a class="command-item" href="#stack"><span>Technology stack</span><small>PAGE</small></a>
+        <a class="command-item" href="#systems"><span>Interactive systems lab</span><small>PAGE</small></a>
         <a class="command-item" href="#work"><span>Projects / portfolio</span><small>PAGE</small></a>
         <a class="command-item" href="#contact"><span>Contact / Discord</span><small>PAGE</small></a>
         <a class="command-item" href="https://modrinth.com/plugin/omnipanel" target="_blank" rel="noopener noreferrer"><span>OmniPanel on Modrinth</span><small>EXTERNAL</small></a>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t d">
+  <title id="t">Kingez — K system mark</title>
+  <desc id="d">Angular K monogram with a diagonal electric-blue signal, on a midnight indigo tile.</desc>
+  <defs>
+    <linearGradient id="back" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111C38"/>
+      <stop offset="1" stop-color="#0A1022"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#5DDFF2"/>
+      <stop offset=".54" stop-color="#6976F5"/>
+      <stop offset="1" stop-color="#AC74F7"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#E3F8FF"/>
+      <stop offset="1" stop-color="#92B7FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="29" fill="url(#back)" stroke="#526989" stroke-opacity=".55" stroke-width="1.5"/>
+  <path d="M27 28v72" stroke="url(#wing)" stroke-width="11" stroke-linecap="square"/>
+  <path d="M45 64 82 28H99L64 63l36 37H82L45 64Z" fill="url(#edge)"/>
+  <path d="M45 64 82 28" stroke="#DAF6FF" stroke-opacity=".62" stroke-width="2.2"/>
+  <path d="M75 63h27" stroke="#52E2F2" stroke-width="3" stroke-linecap="round" opacity=".86"/>
+  <circle cx="104" cy="63" r="4" fill="#6DE4EF"/>
+  <path d="M26 15h18M84 113h18" stroke="#68C8EF" stroke-width="2" stroke-linecap="round" opacity=".53"/>
+</svg>

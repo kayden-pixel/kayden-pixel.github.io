@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <script>document.documentElement.classList.add("has-js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050815">
-  <meta name="description" content="Kingez developer portfolio — Minecraft plugins, Discord automation, Jarvis-style AI, Node.js backends, real-time systems and developer tools.">
+  <meta name="theme-color" content="#030407">
+  <meta name="description" content="Kingez developer command centre — custom Discord bot commissions, Minecraft plugins, Jarvis/KingPro AI, backend engineering and interactive project demos.">
   <meta property="og:title" content="Kingez — Developer Portfolio">
   <meta property="og:description" content="Minecraft server setups, custom Paper plugins, Node.js and Discord systems, Java, Python AI tooling, and real server engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kayden-pixel.github.io/">
-  <title>Kingez — AI, Minecraft & Systems Engineering</title>
+  <title>Kingez | Developer Systems & Discord Bot Commissions</title>
   <meta property="og:site_name" content="Kingez Systems">
   <link rel="icon" href="assets/kingez-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -690,8 +690,11 @@
   </style>
   <link rel="stylesheet" href="assets/experience.css">
   <link rel="stylesheet" href="assets/studio-v3.css">
+  <link rel="stylesheet" href="assets/stark-v4.css">
   <script defer src="assets/experience.js"></script>
   <script defer src="assets/studio-v3.js"></script>
+  <script type="module" src="assets/portfolio-chat.mjs"></script>
+  <meta name="kingez-public-chat-api" content="">
 </head>
 <body>
   <a class="skip-link" href="#top">Skip to content</a>
@@ -707,6 +710,7 @@
       </a>
       <div class="nav-links" id="nav-links" aria-label="Primary navigation">
         <a href="#services">Services</a>
+        <a href="#commissions">Bot commissions</a>
         <a href="#stack">Stack</a>
         <a href="#systems">Systems</a>
         <a href="#work">Work</a>
@@ -724,15 +728,16 @@
     <header class="hero">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Minecraft • AI • backend engineering</div>
-          <h1>I build <span class="gradient-text">systems beyond the ordinary.</span></h1>
+          <div class="eyebrow"><span class="dot"></span> KINGEZ SYSTEMS / DEVELOPER COMMAND CENTRE</div>
+          <h1>I engineer <span class="gradient-text">systems that stand out.</span></h1>
           <p class="hero-copy">
             I'm <strong>Kingez</strong>. I build Minecraft platforms, local AI assistants, Discord security, connected-device apps and the backend systems linking them.
             <strong>Node.js is my everyday language</strong>, alongside Java for Paper and Python for automation and AI. I care about how the pieces connect: permissions, reliable state, recovery, clean interfaces and actual usability.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#work">View selected work <span>↓</span></a>
-            <a class="button secondary" href="https://github.com/kayden-pixel" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="button primary" href="#work">Explore my systems <span>↓</span></a>
+            <a class="button secondary" href="#commissions">Order a Discord bot ↗</a>
+            <a class="button secondary" href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
           <div class="hero-meta">
             <span>Paper / Spigot</span>
@@ -753,6 +758,10 @@
             <div class="terminal-title">KINGEZ.DEV</div>
           </div>
           <div class="terminal-body">
+            <div class="brand-reactor" aria-hidden="true">
+              <span class="reactor-outer"></span><span class="reactor-mid"></span><span class="reactor-inner"></span>
+              <span class="reactor-core">K</span><span class="reactor-tick">KINGEZ / SYSTEMS CORE</span>
+            </div>
             <img class="hero-mark" src="assets/kingez-mark.svg" alt="" aria-hidden="true">
             <div><span class="prompt">➜</span> <span class="command">whoami</span></div>
             <div class="result">minecraft systems developer + automation builder</div><br>
@@ -846,8 +855,8 @@
           </article>
           <article class="card reveal">
             <div class="card-icon">DC</div>
-            <h3>Discord automation</h3>
-            <p>Node.js and Python bots with panels, moderation, security, logging, reports, tickets, role workflows, server integrations, persistence, and production-oriented operations.</p>
+            <h3>Custom Discord bots</h3>
+            <p>Custom Discord bots for communities: panel-driven moderation, anti-raid protection, tickets, roles, logging, automation and API integrations. Commission enquiries welcome.</p>
           </article>
           <article class="card reveal">
             <div class="card-icon">AI</div>
@@ -864,6 +873,45 @@
             <h3>Server engineering</h3>
             <p>Plugin compatibility, permission debugging, Paper tuning, world rules, dependency issues, release validation, GitHub workflows, PM2 orchestration, and production troubleshooting.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="commissions" class="commission" aria-labelledby="commission-title">
+      <div class="wrap">
+        <div class="section-head commission-head reveal">
+          <div><div class="kicker">Commissions / Discord bots</div><h2 id="commission-title">Custom bots for real communities.</h2></div>
+          <p>Need more than a basic moderation bot? I build Discord workflows with real logic, controls and integrations. Tell me what you need and we can agree on a realistic scope.</p>
+        </div>
+        <div class="commission-shell reveal">
+          <div class="commission-top"><span>BUILD REQUEST // KINGEZ SYSTEMS</span><small>DIRECT DISCUSSION · NO AUTOMATED CHECKOUT</small></div>
+          <div class="commission-grid">
+            <div class="commission-copy">
+              <div class="kicker">Discord bots / Node.js + Python</div>
+              <h2>Build something your server actually needs.</h2>
+              <p>From custom role panels and tickets to security bots, anti-nuke protections and API-driven systems. Every commission starts with a feature list and a clear agreement on what is included.</p>
+              <div class="commission-includes">
+                <span>Moderation and anti-raid safeguards</span>
+                <span>Custom slash commands and panels</span>
+                <span>Tickets, applications and role menus</span>
+                <span>Logging, integrations and automations</span>
+                <span>Documentation and deployment guidance</span>
+                <span>Custom behaviour for your community</span>
+              </div>
+              <div class="commission-actions">
+                <a class="button primary" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noopener noreferrer">Discuss your bot ↗</a>
+                <button class="button secondary" id="ask-bot-trigger" type="button">Ask the portfolio assistant</button>
+              </div>
+            </div>
+            <div class="nitro-slab">
+              <span class="nitro-flag">POSSIBLE COMMISSION TRADE</span>
+              <span class="nitro-value">1 <small>YEAR</small></span>
+              <b>Discord Nitro gift</b>
+              <p>For a clearly agreed, suitable Discord bot project, I'm open to discussing a one-year Nitro gift as compensation. The exact features, timeline and support are agreed beforehand.</p>
+              <p><strong>No gifts upfront.</strong> No checkout on this site. A full-featured production bot or ongoing hosting is not automatically included.</p>
+            </div>
+          </div>
+          <div class="commission-foot">Note: An annual Nitro gift is an option to discuss, not a fixed price for every bot. Avoid sharing gift codes publicly; arrange details privately through the linked Discord community.</div>
         </div>
       </div>
     </section>
@@ -1367,6 +1415,33 @@
     </div>
   </footer>
 
+  <!-- The assistant uses only data/kingez-public.json; never connects to Jarvis private tools. -->
+  <button class="know-trigger" id="know-trigger" type="button" aria-controls="know-panel" aria-expanded="false" aria-label="Open Kingez portfolio question assistant">
+    <span class="trigger-core" aria-hidden="true">K</span>
+    <span>Ask about Kingez<small>PUBLIC KNOWLEDGE / Q&amp;A</small></span>
+  </button>
+  <section class="know-panel" id="know-panel" aria-label="Ask about Kingez public profile" hidden>
+    <div class="know-head">
+      <div class="know-avatar" aria-hidden="true">K</div>
+      <div class="know-head-main"><strong>Kingez Knowledge Console</strong><small id="know-status" role="status">LOADING PUBLIC KNOWLEDGE</small></div>
+      <button type="button" class="know-close" id="know-close" aria-label="Close assistant">×</button>
+    </div>
+    <div class="know-disclaimer"><span>PUBLIC INFO ONLY</span> · Not connected to private Jarvis actions, files or memory.</div>
+    <div class="know-messages" id="know-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Assistant conversation"></div>
+    <div class="know-starters" aria-label="Suggested questions">
+      <button type="button" class="know-starter" data-question="Can you build me a Discord bot for Nitro?">Discord bot + Nitro</button>
+      <button type="button" class="know-starter" data-question="What is KingPro Jarvis?">About Jarvis</button>
+      <button type="button" class="know-starter" data-question="What are your projects?">Projects</button>
+      <button type="button" class="know-starter" data-question="How can I contact Kingez?">Contact</button>
+    </div>
+    <form class="know-form" id="know-form">
+      <label class="sr-only" for="know-input">Ask a question about Kingez</label>
+      <input class="know-input" id="know-input" name="question" type="text" autocomplete="off" placeholder="Ask about Kingez or his projects…" maxlength="240" required>
+      <button class="know-submit" type="submit">Send</button>
+    </form>
+    <div class="know-footer"><span>PUBLIC-ONLY ANSWERS · NO USER DATA STORED</span><span>MAX 12 QUESTIONS / SESSION</span></div>
+  </section>
+
   <p id="copy-status" role="status" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)"></p>
   <dialog class="command-palette" id="command-palette" aria-labelledby="command-title">
     <div class="command-shell">
@@ -1378,6 +1453,7 @@
       <div class="command-list" aria-label="Quick navigation results">
         <a class="command-item" href="#top"><span>Home / introduction</span><small>PAGE</small></a>
         <a class="command-item" href="#services"><span>Development services</span><small>PAGE</small></a>
+        <a class="command-item" href="#commissions"><span>Discord bot commissions / Nitro</span><small>PAGE</small></a>
         <a class="command-item" href="#stack"><span>Technology stack</span><small>PAGE</small></a>
         <a class="command-item" href="#systems"><span>Interactive systems lab</span><small>PAGE</small></a>
         <a class="command-item" href="#work"><span>Projects / portfolio</span><small>PAGE</small></a>

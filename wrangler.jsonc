@@ -1,0 +1,16 @@
+{
+  // Optional separate backend. GitHub Pages will never execute this file.
+  // Deploy only from a Cloudflare account after confirming the namespace_id is unique there.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kingez-public-profile",
+  "main": "backend/worker.mjs",
+  "compatibility_date": "2026-11-17",
+  "workers_dev": true,
+  "ratelimits": [
+    {
+      "name": "CHAT_LIMITER",
+      "namespace_id": "7632101",
+      "simple": { "limit": 30, "period": 60 }
+    }
+  ]
+}

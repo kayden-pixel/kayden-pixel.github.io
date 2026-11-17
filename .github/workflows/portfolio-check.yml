@@ -2,7 +2,7 @@ name: Portfolio checks
 
 on:
   push:
-    branches: [main, feature/portfolio-experience-upgrade]
+    branches: [main, 'feature/**']
   pull_request:
 
 permissions:
@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: '22'
       - name: Verify JavaScript syntax
-        run: node --check assets/experience.js
+        run: |
+          node --check assets/experience.js
+          node --check assets/studio-v3.js
       - name: Run zero-dependency portfolio checks
         run: node --test test/portfolio.test.js

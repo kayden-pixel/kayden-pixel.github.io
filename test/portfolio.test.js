@@ -31,11 +31,12 @@ test('local hash links point to valid IDs', () => {
   }
 });
 
-test('eight featured projects have categories and usable filters', () => {
-  const projects = [...html.matchAll(/<article class="card project reveal" data-categories="([^"]+)"/g)];
-  assert.equal(projects.length, 8);
-  for (const category of ['minecraft', 'discord', 'ai', 'backend']) {
-    assert.ok(projects.some(m => m[1].split(' ').includes(category)), category + ' missing');
+test('twelve featured projects have unique deep links and usable filters', () => {
+  const projects = [...html.matchAll(/<article class="card project reveal(?: featured)?" id="([^"]+)" data-categories="([^"]+)"/g)];
+  assert.equal(projects.length, 12);
+  assert.equal(new Set(projects.map(m => m[1])).size, 12);
+  for (const category of ['minecraft', 'discord', 'ai', 'devices', 'backend']) {
+    assert.ok(projects.some(m => m[2].split(' ').includes(category)), category + ' missing');
     assert.ok(html.includes('data-filter="' + category + '"'), category + ' filter missing');
   }
   assert.match(html, /data-filter="all"/);
@@ -57,4 +58,55 @@ test('content has a no-JavaScript fallback', () => {
 
 test('script does not require injected API credentials', () => {
   assert.doesNotMatch(js, /process\.env|Authorization\s*:|Bearer\s+/);
+});
+
+const studioCss = fs.readFileSync(path.join(root, 'assets/studio-v3.css'), 'utf8');
+const studioJs = fs.readFileSync(path.join(root, 'assets/studio-v3.js'), 'utf8');
+const logo = fs.readFileSync(path.join(root, 'assets/kingez-mark.svg'), 'utf8');
+
+test('original vector logo and premium theme are integrated', () => {
+  assert.ok(logo.trimStart().startsWith('<svg '));
+  assert.ok(logo.includes('viewBox="0 0 128 128"'));
+  assert.ok(logo.includes('<title id="t">Kingez'));
+  for (const item of ['rel="icon" href="assets/kingez-mark.svg"',
+                     'href="assets/studio-v3.css"',
+                     'src="assets/studio-v3.js"',
+                     '<img src="assets/kingez-mark.svg"']) {
+    assert.ok(html.includes(item), item + ' missing');
+  }
+  assert.ok(studioCss.includes('prefers-reduced-motion'));
+  assert.ok(studioCss.includes('max-width: 620px'));
+});
+
+test('interactive six-system lab has matching tabs and usable fallback', () => {
+  const keys = [...html.matchAll(/class="lab-tab"[^>]*data-system="([^"]+)"/g)].map(m => m[1]);
+  assert.deepEqual(keys, ['kingpro', 'modai', 'kydora', 'exam', 'sense', 'omnipanel']);
+  for (const key of keys) assert.ok(studioJs.includes(key + ': {'), key + ' missing');
+  for (const id of ['systems','lab-content','lab-title','lab-description',
+    'lab-highlights','lab-tech','lab-caption','lab-note','project-search','project-empty']) {
+    assert.ok(html.includes('id="' + id + '"'), id + ' missing');
+  }
+  assert.equal([...html.matchAll(/data-lab-node/g)].length, 4);
+  assert.ok(html.includes('aria-pressed="true">KingPro'));
+  assert.ok(studioJs.includes('title.textContent = entry.title'));
+});
+
+test('project links and accurate maturity labels are present', () => {
+  for (const url of ['https://github.com/kayden-pixel/SENSE',
+                     'https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest',
+                     'https://modrinth.com/plugin/omnipanel']) {
+    assert.ok(html.includes(url), url + ' missing');
+  }
+  assert.ok(html.includes('Retired server'));
+  assert.ok(html.includes('Private development'));
+  assert.ok(html.toLowerCase().includes('early beta'));
+});
+
+test('portfolio search and copy controls remain local-only', () => {
+  assert.ok(studioJs.includes('navigator.clipboard.writeText'));
+  assert.ok(studioJs.includes('ArrowRight'));
+  assert.ok(studioJs.includes('refreshProjects()'));
+  for (const forbidden of ['innerHTML', 'eval(', 'process.env', 'Authorization:']) {
+    assert.ok(!studioJs.includes(forbidden), forbidden + ' should not exist');
+  }
 });

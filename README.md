@@ -1,41 +1,49 @@
-# Kingez Developer Portfolio
+# Kingez — Systems Engineering Portfolio
 
-[**Live portfolio**](https://kayden-pixel.github.io/) · [GitHub](https://github.com/kayden-pixel) · [Discord](https://discord.gg/SdCvw52vzS)
+[**Live website**](https://kayden-pixel.github.io/) · [Public GitHub](https://github.com/kayden-pixel) · [Discord](https://discord.gg/SdCvw52vzS)
 
-A personal developer portfolio for Minecraft/Paper plugins, Discord automation, local AI experiments, Node.js backends and real-time systems.
+A fast, zero-build portfolio covering Minecraft plugins, Discord automation, local AI assistants, Android software, connected-device tools, document research and Node.js backends.
 
-## Experience v2
+## Studio v3
 
-- Updated responsive, animated visual design: atmospheric gradients, terminal float, project preview motion, responsive cards and prominent calls to action.
-- Filterable portfolio covering Minecraft, Discord, AI/interfaces and backend engineering.
-- Searchable navigation palette (Ctrl/⌘ + K or `/`) and keyboard-accessible mobile menu.
-- Reading progress and active-section feedback.
-- Public GitHub repository/follower counts with a 5.5-second fetch timeout, 10-minute session cache and graceful offline fallback.
-- Reduced-motion support and accessible focus states.
-- Eight featured projects, with public/private/prototype status labels where relevant.
+- Original Kingez **K monogram SVG**, used in the navbar, hero and browser favicon.
+- New midnight / electric cyan / iris-purple palette. Responsive motion, interactive buttons, refined typography and hover states.
+- **12 featured projects**, clearly labelled as public downloads, public beta, private development, prototype or retired. Public project links are to real GitHub or Modrinth pages.
+- **Interactive Systems Lab** explaining KingPro, ModAI, Kydora Home, SA Exam Research Engine, SENSE and OmniPanel. Switchable architecture pipeline, technology chips, technical notes. This visualizer is illustrative, not telemetry.
+- **Search + category filters** for projects; dedicated devices category; per-project deep links and copy-link buttons.
+- Existing command palette, mobile navigation, responsive design, page reading progress and public GitHub counts remain.
+- All user-generated data remains on GitHub Pages' static frontend only; there is **no fake backend**, private credentials or browser-accessible admin system.
 
-## Architecture and security
+## Structure
 
-GitHub Pages serves this repository as **static HTML, CSS and JavaScript**. No build tools, database, API tokens or server are needed. `index.html` holds the site content and original base styles. `assets/experience.css` and `assets/experience.js` provide the progressive enhancements.
+| File | Purpose |
+|---|---|
+| `index.html` | All human-readable content, links, existing base CSS and markup |
+| `assets/experience.css`, `assets/experience.js` | v2 progressive enhancements |
+| `assets/studio-v3.css`, `assets/studio-v3.js` | v3 palette, Systems Lab, search, copy-link interactions |
+| `assets/kingez-mark.svg` | Hand-authored editable SVG logo and favicon |
+| `test/portfolio.test.js` | Zero-dependency integrity checks |
+| `.github/workflows/portfolio-check.yml` | Node syntax and site checks on pushes/PRs |
 
-The GitHub count panel uses GitHub's public, unauthenticated user API. It **is not a private backend**: GitHub Pages cannot execute server-side functions. The panel uses bounded caching, does not expose API credentials and displays an unavailable message if the public API cannot be reached. Future private APIs, contact submissions or paid services would need independent server-side hosting plus secrets and abuse protection.
+GitHub Pages is a static site host. Public GitHub counts use GitHub's unauthenticated REST API with a 10-minute session cache and a 5.5-second timeout. Any future authenticated API, contact form, database or private model service needs separate protected backend hosting and secrets.
 
-All portfolio content remains readable without the public GitHub API. JavaScript enhances search/filter/navigation but the project descriptions and links are ordinary HTML.
+## Quick verification
 
-## Verify locally
-
-Open `index.html` in a browser. To run checks with Node.js 22+:
+Open `index.html` in a browser or run a local HTTP server. With Node.js 22+:
 
 ```sh
 node --check assets/experience.js
+node --check assets/studio-v3.js
 node --test test/portfolio.test.js
 ```
 
-GitHub Actions repeats these checks on pushes and pull requests. Also manually verify responsive layouts, keyboard navigation, links and reduced-motion behavior in a browser before release.
+Before shipping changes, validate at phone and desktop widths; open the mobile menu; use Ctrl/⌘+K; switch the six Systems Lab buttons; filter and search projects; expand architecture notes; test copy links; and enable reduced motion. Content and links should remain visible when JavaScript is disabled.
 
-## Selected public work
+## Featured public work
 
-- [OmniPanel](https://modrinth.com/plugin/omnipanel) — Minecraft server administration
-- [Kingez341YT PvP Pack](https://modrinth.com/resourcepack/kingez341yt) — PvP-focused texture pack
+- [OmniPanel](https://modrinth.com/plugin/omnipanel)
+- [Kingez341YT PvP Pack](https://modrinth.com/resourcepack/kingez341yt)
+- [SENSE](https://github.com/kayden-pixel/SENSE) — early beta; hardware not fully validated
+- [Kydora Home downloads](https://github.com/kayden-pixel/Kydora-Home-Downloads/releases/latest) — applications distributed publicly; code proprietary
 
-Private work and experimental projects are identified as such; the site does not claim they are open-source releases.
+The private SA Exam Research Engine, KingPro, ModAI, Orbital Strike and others are described with explicit scope and maturity rather than linked to private repository source. Skystrike Survival is marked as retired.

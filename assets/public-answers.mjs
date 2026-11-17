@@ -6,7 +6,7 @@ const stopWords = new Set([
   "he","her","him","his","how","i","in","is","it","me","my","of","on","or",
   "please","tell","the","their","this","to","us","was","what","when","where",
   "which","who","why","will","with","would","you","your","about","just","some",
-  "kingez","kingpro","kayden","pixel","do","make","create"
+  "do","make","create"
 ]);
 
 export function normalize(value) {

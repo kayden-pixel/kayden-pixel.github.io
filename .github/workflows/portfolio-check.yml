@@ -20,5 +20,8 @@ jobs:
         run: |
           node --check assets/experience.js
           node --check assets/studio-v3.js
+          node --check assets/public-answers.mjs
+          node --check assets/portfolio-chat.mjs
+          node --check backend/worker.mjs
       - name: Run zero-dependency portfolio checks
-        run: node --test test/portfolio.test.js
+        run: node --test test/portfolio.test.js test/public-knowledge.test.mjs

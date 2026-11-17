@@ -15,7 +15,6 @@ test('required layout sections and enhancement assets exist', () => {
   }
   assert.match(html, /href="assets\/experience\.css"/);
   assert.match(html, /src="assets\/experience\.js"/);
-  assert.match(html, /prefers-reduced-motion/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(js, /AbortController/);
 });

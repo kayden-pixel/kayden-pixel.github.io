@@ -49,6 +49,12 @@ test('quick navigation and public data integration are reachable', () => {
   assert.match(js, /https:\/\/api\.github\.com\/users\/kayden-pixel/);
 });
 
+test('content has a no-JavaScript fallback', () => {
+  assert.match(html, /document\.documentElement\.classList\.add\("has-js"\)/);
+  assert.match(html, /else element\.classList\.add\('visible'\)/);
+  assert.match(css, /\.has-js \.reveal:not\(\.visible\)/);
+});
+
 test('script does not require injected API credentials', () => {
   assert.doesNotMatch(js, /process\.env|Authorization\s*:|Bearer\s+/);
 });

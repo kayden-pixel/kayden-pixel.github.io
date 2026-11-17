@@ -1,0 +1,22 @@
+name: Portfolio checks
+
+on:
+  push:
+    branches: [main, feature/portfolio-experience-upgrade]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify JavaScript syntax
+        run: node --check assets/experience.js
+      - name: Run zero-dependency portfolio checks
+        run: node --test test/portfolio.test.js

@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>document.documentElement.classList.add("has-js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07080d">
-  <meta name="description" content="Kingez — Minecraft server developer focused on complete Paper/Purpur setups, custom plugins, Node.js systems, Discord automation, and AI tooling.">
+  <meta name="theme-color" content="#060913">
+  <meta name="description" content="Kingez developer portfolio — Minecraft plugins, Discord automation, Jarvis-style AI, Node.js backends, real-time systems and developer tools.">
   <meta property="og:title" content="Kingez — Developer Portfolio">
   <meta property="og:description" content="Minecraft server setups, custom Paper plugins, Node.js and Discord systems, Java, Python AI tooling, and real server engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kayden-pixel.github.io/">
-  <title>Kingez — Minecraft Developer & Systems Builder</title>
+  <title>Kingez — Minecraft, AI & Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -685,9 +686,13 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
+  <link rel="stylesheet" href="assets/experience.css">
+  <script defer src="assets/experience.js"></script>
 </head>
 <body>
-  <div class="glow" id="glow"></div>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
 
   <nav id="nav">
     <div class="wrap nav-inner">
@@ -696,13 +701,17 @@
         <span>Kingez</span>
         <span>/ Minecraft + backend developer</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="nav-cta" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noreferrer">Discord ↗</a>
+      <div class="nav-tools">
+        <button class="command-trigger" id="command-trigger" type="button" aria-label="Open quick navigation"><span class="command-label">⌕ &nbsp; Search</span><kbd>Ctrl K</kbd></button>
+        <a class="nav-cta" href="https://discord.gg/SdCvw52vzS" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+        <button class="mobile-menu-trigger" id="mobile-menu" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation">☰</button>
+      </div>
     </div>
   </nav>
 
@@ -710,10 +719,10 @@
     <header class="hero">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Open to Minecraft development work</div>
-          <h1>I build <span class="gradient-text">Minecraft servers</span> people can actually use.</h1>
+          <div class="eyebrow"><span class="dot"></span> Minecraft • AI • backend engineering</div>
+          <h1>I build <span class="gradient-text">systems that actually work.</span></h1>
           <p class="hero-copy">
-            I'm <strong>Kingez</strong>. Most of my work is around Minecraft servers, plugins, Discord systems and the tooling behind them.
+            I'm <strong>Kingez</strong> — a developer building Minecraft platforms, Discord bots, AI assistants and the backend systems that connect everything.
             <strong>Node.js is the language I use the most</strong>. I use Java for Paper/Purpur plugin work, and Python mainly when I'm building AI, automation or model-driven tools. I like taking a server from "blank host" to something that is configured, connected, tested and ready for players.
           </p>
           <div class="hero-actions">
@@ -752,11 +761,29 @@
               <strong>kayden-pixel</strong>
               <small>GitHub developer profile</small>
             </div>
-            <div class="profile-status">ONLINE</div>
+            <div class="profile-status">GITHUB PROFILE</div>
           </div>
         </div>
       </div>
     </header>
+
+    <div class="capability-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Node.js &amp; Real-time APIs</span><span>Minecraft Paper Plugins</span><span>Discord Security</span><span>Local AI &amp; Automation</span><span>Systems Engineering</span>
+        <span>Node.js &amp; Real-time APIs</span><span>Minecraft Paper Plugins</span><span>Discord Security</span><span>Local AI &amp; Automation</span><span>Systems Engineering</span>
+      </div>
+    </div>
+
+    <section class="github-pulse" aria-label="Portfolio numbers">
+      <div class="wrap">
+        <div class="pulse-grid">
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">⌘</span><div><strong data-github-stat="repos">—</strong><small>Public GitHub repositories</small></div></div>
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">◎</span><div><strong data-github-stat="followers">—</strong><small>GitHub followers</small></div></div>
+          <div class="pulse-stat"><span class="pulse-icon" aria-hidden="true">✦</span><div><strong>08</strong><small>Selected projects and systems</small></div></div>
+        </div>
+        <p class="pulse-foot"><span id="github-data-status" role="status">Fetching public GitHub data…</span> <a href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer">See the GitHub profile ↗</a></p>
+      </div>
+    </section>
 
     <section class="compact">
       <div class="wrap">
@@ -889,7 +916,18 @@
           <p>Some projects are private or server-specific, so this portfolio focuses on the systems and engineering work behind them instead of pretending everything is an open-source demo.</p>
         </div>
 
-        <article class="card project reveal">
+        <div class="project-toolbar">
+          <div class="project-filters" role="group" aria-label="Filter portfolio projects">
+            <button type="button" class="filter-pill" data-filter="all" aria-pressed="true">All work</button>
+            <button type="button" class="filter-pill" data-filter="minecraft" aria-pressed="false">Minecraft</button>
+            <button type="button" class="filter-pill" data-filter="discord" aria-pressed="false">Discord</button>
+            <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">AI / interfaces</button>
+            <button type="button" class="filter-pill" data-filter="backend" aria-pressed="false">Backend</button>
+          </div>
+          <span id="project-count" class="project-count" aria-live="polite">8 projects</span>
+        </div>
+
+        <article class="card project reveal" data-categories="minecraft backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 01 · MINECRAFT</div>
@@ -926,7 +964,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="discord backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 02 · SECURITY</div>
@@ -952,7 +990,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 03 · MINECRAFT</div>
@@ -978,12 +1016,12 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 04 · LIVE SERVER SETUP</div>
               <h3>Skystrike Survival</h3>
-              <p>A survival/SMP server setup I actively work on myself, which is useful because I have to deal with the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
+              <p>A previous survival/SMP server deployment, now retired, where I handled the same problems a client server has: lobby/world structure, permissions, WorldGuard behavior, gameplay rules, scoreboards, MOTD presentation, powers, anti-cheat, plugin conflicts, launch bugs and player feedback.</p>
               <div class="detail-list">
                 <div>Paper-based setup with a dedicated lobby and survival gameplay flow</div>
                 <div>Multiverse + WorldGuard configuration with per-world rules and spawn protection</div>
@@ -1000,7 +1038,7 @@
               <div class="window-bar"><i></i><i></i><i></i></div>
               <div class="window-body">
                 <div class="metric-row">
-                  <div class="metric"><b>SMP</b><small>LIVE SETUP</small></div>
+                  <div class="metric"><b>SMP</b><small>PAST DEPLOYMENT</small></div>
                   <div class="metric"><b>LP</b><small>PERMISSIONS</small></div>
                   <div class="metric"><b>WG</b><small>PROTECTION</small></div>
                 </div>
@@ -1010,7 +1048,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="ai backend">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 05 · AI / AUTOMATION</div>
@@ -1036,7 +1074,7 @@
           </div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-categories="minecraft">
           <div class="project-copy">
             <div>
               <div class="project-num">PROJECT 06 · PUBLIC MINECRAFT RELEASE</div>
@@ -1070,6 +1108,42 @@
               </div>
             </div>
           </div>
+        </article>
+
+        <article class="card project reveal" data-categories="discord ai backend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 07 · DISCORD / AI · PRIVATE DEVELOPMENT</div>
+              <h3>DevLaunch Bot</h3>
+              <p>A Discord developer-community assistant combining a guided setup panel with message-based conversation, topic-aware answers and project discovery. The goal is to make developer servers useful without requiring a slash command for every interaction.</p>
+              <div class="detail-list">
+                <div>Guided setup for channel routing, roles and assistant behavior</div>
+                <div>Message and mention replies with optional controlled scheduled activity</div>
+                <div>AI model and GitHub-based development help, designed around rate limits and fallbacks</div>
+              </div>
+            </div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Discord</span><span class="chip">AI</span><span class="chip">GitHub API</span></div>
+            <div class="proof-note">Private project — architecture and development work</div>
+          </div>
+          <div class="project-visual red"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>BOT</b><small>COMMUNITY</small></div><div class="metric"><b>API</b><small>PROJECT SEARCH</small></div><div class="metric"><b>AI</b><small>ASSISTANCE</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
+        </article>
+
+        <article class="card project reveal" data-categories="ai frontend">
+          <div class="project-copy">
+            <div>
+              <div class="project-num">PROJECT 08 · EXPERIMENTAL UI · IN DEVELOPMENT</div>
+              <h3>HoloDesk</h3>
+              <p>An experimental Windows interface exploring camera-based hand tracking, gesture-controlled panels and an animated sci-fi workspace. It brings together local desktop controls and interactive visualization while remaining independent from the Jarvis assistant.</p>
+              <div class="detail-list">
+                <div>Hand and pinch gesture tracking with stateful interaction controls</div>
+                <div>Floating workspace panels and local file/media viewing concepts</div>
+                <div>Focus on smoother, less sensitive gestures and practical desktop usability</div>
+              </div>
+            </div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Windows UI</span><span class="chip">Computer Vision</span><span class="chip">Prototype</span></div>
+            <div class="proof-note">Experimental work — not presented as a public release</div>
+          </div>
+          <div class="project-visual"><div class="system-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="metric-row"><div class="metric"><b>UI</b><small>SPATIAL HUD</small></div><div class="metric"><b>CV</b><small>HAND TRACKING</small></div><div class="metric"><b>3D</b><small>VISUAL DESIGN</small></div></div><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></div></div>
         </article>
       </div>
     </section>
@@ -1137,6 +1211,28 @@
     </div>
   </footer>
 
+  <dialog class="command-palette" id="command-palette" aria-labelledby="command-title">
+    <div class="command-shell">
+      <div class="command-head">
+        <label for="command-search" id="command-title" style="position:absolute;clip:rect(0,0,0,0);white-space:nowrap">Search quick navigation</label>
+        <input id="command-search" class="command-search" type="search" autocomplete="off" placeholder="Jump to projects, services, contact…" aria-label="Search portfolio links">
+        <button id="command-close" class="command-close" type="button" aria-label="Close quick navigation">Esc ✕</button>
+      </div>
+      <div class="command-list" aria-label="Quick navigation results">
+        <a class="command-item" href="#top"><span>Home / introduction</span><small>PAGE</small></a>
+        <a class="command-item" href="#services"><span>Development services</span><small>PAGE</small></a>
+        <a class="command-item" href="#stack"><span>Technology stack</span><small>PAGE</small></a>
+        <a class="command-item" href="#work"><span>Projects / portfolio</span><small>PAGE</small></a>
+        <a class="command-item" href="#contact"><span>Contact / Discord</span><small>PAGE</small></a>
+        <a class="command-item" href="https://modrinth.com/plugin/omnipanel" target="_blank" rel="noopener noreferrer"><span>OmniPanel on Modrinth</span><small>EXTERNAL</small></a>
+        <a class="command-item" href="https://modrinth.com/resourcepack/kingez341yt" target="_blank" rel="noopener noreferrer"><span>Kingez PvP Pack</span><small>EXTERNAL</small></a>
+        <a class="command-item" href="https://github.com/kayden-pixel" target="_blank" rel="noopener noreferrer"><span>GitHub developer profile</span><small>EXTERNAL</small></a>
+      </div>
+      <p class="command-empty" id="command-empty" hidden>No matches. Try projects, GitHub or contact.</p>
+      <p class="command-hint">Press Ctrl / ⌘ + K or / to open. Escape to close.</p>
+    </div>
+  </dialog>
+
   <script>
     const nav = document.getElementById('nav');
     const glow = document.getElementById('glow');
@@ -1151,18 +1247,19 @@
       glow.style.top = event.clientY + 'px';
     }, { passive: true });
 
-    const observer = new IntersectionObserver(function (entries) {
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: .12 });
+    }, { threshold: .12 }) : null;
 
     document.querySelectorAll('.reveal').forEach(function (element, index) {
       element.style.transitionDelay = Math.min(index % 3, 2) * 70 + 'ms';
-      observer.observe(element);
+      if (observer) observer.observe(element);
+      else element.classList.add('visible');
     });
   </script>
 </body>
